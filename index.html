@@ -322,14 +322,17 @@
       
         
           
-            <p>每次hexo d -g都发布不出去文章</p>
-<p>查看发现错误提示为：</p>
-<p>ERROR Process failed: tags/index.md<br>YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:</p>
-<p>修改后发现问题是在tags后面没有留有空格：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: vue项目搭建笔记</span><br><span class="line">date: 2018-07-03 16:15:30</span><br><span class="line">tags: </span><br><span class="line">photos: /2018/07/03/vue项目搭建笔记/5aa8db481d851.png</span><br><span class="line">categories:</span><br><span class="line">- hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-
-          
+          每次hexo d -g都发布不出去文章
+查看发现错误提示为：
+ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an imp
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/12/hexo无法发布文章问题及解决/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -469,76 +472,29 @@
       
         
           
-            <h1 id="一、数组的定义"><a href="#一、数组的定义" class="headerlink" title="一、数组的定义"></a>一、数组的定义</h1><ul>
-<li>定义：数组是一种容器，可以同时存放多个数据值</li>
-<li>特点：<ol>
-<li>数组是一种引用数据类型。</li>
-<li>数组当中的多个数据，类型必须统一。</li>
-<li>数组的长度在程序运行期间不可改变。</li>
-</ol>
-</li>
-</ul>
-<h1 id="二、数组的初始化"><a href="#二、数组的初始化" class="headerlink" title="二、数组的初始化"></a>二、数组的初始化</h1><ul>
-<li><p>数组的初始化：在内存当中创建一个数组，并且向其中赋予一些默认值。</p>
-</li>
-<li><p>两种常见的初始化方式：</p>
-<ol>
-<li><p><strong>动态初始化</strong>（指定长度）</p>
-<ul>
-<li><p>数据类型[] 数组名称 = new 数据类型[数组长度];</p>
-</li>
-<li><p>左侧数据类型：也就是当前数组中保存的数据类型</p>
-</li>
-<li><p>左侧中括号：代表创建的是数组而不是变量</p>
-</li>
-<li><p>右侧new：创建数组的动作，为其开辟空间</p>
-</li>
-<li><p>右侧数据类型：必须与左侧数据类型保持一致</p>
-</li>
-<li><p>右侧中括号数字：指定数组长度，可以保存多少个同类型数据</p>
-<p>‘ int[] arrayA = new int[300]; ’</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ol start="2">
-<li><p><strong>静态初始化</strong>（指定内容）</p>
-<ul>
-<li><p>在创建数组的时候不直接指定数据个数，而是直接将具体的数据内容进行指定。</p>
-</li>
-<li><p>格式：数据类型[] 数组名称 = new 数据类型[] {元素1,元素2,…};</p>
-<p>‘ int[] arrayB = new int[] {2,15,26}; ’</p>
-<p>‘ String[] arrayC = new String[]{“hello”,”world”,”java”}; ’</p>
-</li>
-<li><p>省略格式：数据类型[] 数组名称 = {元素1,元素2,…};</p>
-<p>‘int[] array A = {10,20,30};‘</p>
-</li>
-<li><p>注意事项：</p>
-<ol>
-<li><p>静态初始化没有直接指定长度，但是仍然会自动推算得到长度。</p>
-</li>
-<li><p>静态/静态初始化标准格式都可以拆分成为两个步骤。</p>
-<p>···java</p>
-<p>int[] arrayA ;</p>
-<p>arrayA = new int[]{10,20,30};//静态初始化拆分</p>
-<p>int[] arrayB;</p>
-<p>arrayB = new int[5];//动态初始化拆分</p>
-<p>···</p>
-</li>
-<li><p>静态初始化一旦使用省略格式则不可拆分。</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><strong>使用建议</strong>：不确定数组中具体内容时使用静态初始化，否则使用动态初始化。</li>
-</ol>
-<h1 id="三、数组的打印"><a href="#三、数组的打印" class="headerlink" title="三、数组的打印"></a>三、数组的打印</h1>
-          
+          一、数组的定义
+定义：数组是一种容器，可以同时存放多个数据值
+特点：
+数组是一种引用数据类型。
+数组当中的多个数据，类型必须统一。
+数组的长度在程序运行期间不可改变。
+
+
+
+二、数组的初始化
+数组的初始化：在内存当中创建一个数组，并且向其中赋予一些默认值。
+
+两种常见的初始化方式：
+
+动态初始化（指
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/12/java学习-数组/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -678,72 +634,31 @@
       
         
           
-            <h1 id="一、方法的定义与调用"><a href="#一、方法的定义与调用" class="headerlink" title="一、方法的定义与调用"></a>一、方法的定义与调用</h1><ul>
-<li><p>格式:</p>
-<blockquote>
-<p>修饰符 返回值类型 方法名（参数列表）{</p>
-<p>……..//代码实现</p>
-<p>return 结果；</p>
-<p>}</p>
-</blockquote>
-<ol>
-<li>修饰符：public static</li>
-<li>返回值类型：方法运行结果的数据类型</li>
-<li>参数列表：调用方法时传递所需要的未知数据</li>
-<li>return：方法执行后返回结果</li>
-</ol>
-</li>
-<li><p>方法的三种调用格式：</p>
-<ol>
-<li>单独调用：方法名称（参数）；</li>
-<li>打印调用</li>
-<li>赋值调用</li>
-</ol>
-<blockquote>
-<p>public class Demo02MethodDefine {</p>
-<pre><code>public static void main(String[] args) {
-    sum(10,20);//1.单独调用：方法名称（参数）；
-    System.out.println(sum(10,20));//2.打印调用
-    int re = sum(10,20);//3.赋值调用
-    System.out.println(re);
-}
-public static int sum(int a,int b){
-    int result = a + b;
-    return result;
-}</code></pre><p>}</p>
-</blockquote>
-</li>
-<li><p>定义方法的注意事项：</p>
-<ol>
-<li>定义的位置：在类中，方法外</li>
-<li>返回值类型必须与return语句中返回值类型相同</li>
-</ol>
-</li>
-</ul>
-<h1 id="二、方法重载（overload）"><a href="#二、方法重载（overload）" class="headerlink" title="二、方法重载（overload）"></a>二、方法重载（overload）</h1><ul>
-<li><p>方法重载（定义）：指在同一个类中，使具有同一功能的方法同名，调用时只需要执行相对应参数列表的方法即可，与返回值类型无关。</p>
-<p>tips: windows不区分大小写，代码明确区分大小写，open（）与OPEN()不是重载</p>
-</li>
-<li><p>参数列表：个数不同，数据类型不同，多类型顺序不同。</p>
-</li>
-<li><p>重载方法调用：jvm通过方法的参数列表调用不同的方法。</p>
-</li>
-<li><p>与下列因素无关：</p>
-<ol>
-<li>与参数名称无关</li>
-<li>与方法返回值类型无关</li>
-</ol>
-</li>
-<li><p>示例：</p>
-<p>public static int sum(int a ,int b){…}</p>
-<p>public static int sum(int a ,int b,int c){…}</p>
-<p>public static int sum(int a ,int b,int c , int d){…}</p>
-<p>public static double sum(double a ,double b){…}</p>
-<p>//在调用输出语句时，println方法也是进行了多种数据类型的重载形式</p>
-</li>
-</ul>
+          一、方法的定义与调用
+格式:
 
-          
+修饰符 返回值类型 方法名（参数列表）{
+……..//代码实现
+return 结果；
+}
+
+
+修饰符：public static
+返回值类型：方法运行结果的数据类型
+参数列表：调用方法时传递所需要的未知数据
+return：方法执行后返回结果
+
+
+方法的三种调用格式：
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/11/java学习-方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -861,40 +776,15 @@ public static int sum(int a,int b){
       
         
           
-            <h1 id="一、上周生活总结"><a href="#一、上周生活总结" class="headerlink" title="一、上周生活总结"></a>一、上周生活总结</h1><p>​    其实不算是一个一周生活总结，因为阴茎算是到达学校后的第11天了。来之前充满了对新生活的恐惧，好似也没有过多的期待，来之后觉得很多事情没有想象中那么糟糕，比如新舍友、比如我的导师。新的舍友们也都算得上是活泼的性格吧，并不是我想象中的沉闷，也并没有变成我终日一个人踽踽独行的场面，大家还是会一起吃饭，一起去买东西。但是我想，研究生生涯还是要向雷涛院长所说的耐得住寂寞，如大学生活一般长期处于人群之中确实是一种随波逐流的表现。</p>
-<p>​    第一周完成了选课、缴纳学费等工作，到目前为止除了没有购买课本，算是基本上完成了入学的绝大多数工作。在雷涛院长给我们做的入学会议上，他说研究生生涯要给自己定一些目标，有几个至少：至少申请一次出国留学，至少参加一次国际会议，后面忘了，总之都是一些可以去尝试的目标，希望以后有机会能够去完成。</p>
-<p>​    昨天是教师节，和实验室师兄师姐一起去了老师家里送了礼物，本以为就是简单的寒暄就可以离开，结果老师谈了许多关于数学的探讨。其中提到极限的定义，在我们一同思考的时候才发现当初学极限的时候根本没有人过多关注极限的定义，而是将目光都放在计算的方法上，却忘了学习的本质是你需要去认识一个事务，去了解他才能运用它。在那场谈话里，我看得到老师对于学术的热情，对于数学的热爱，我想，也真的只有这样的人适合去做学术研究，因为他们有无穷的好奇心和不断探索的毅力。而我目前所缺失的，正是这种探索的精神，我们总是草草的被动吸收知识，却没有了当初学习很多课程时被新奇事物所吸引的感觉。</p>
-<h1 id="二、关于毕业后的目标"><a href="#二、关于毕业后的目标" class="headerlink" title="二、关于毕业后的目标"></a>二、关于毕业后的目标</h1><p>​    当初考研就是为了能够进入大厂，拥有一个光明的前景，不错的薪水。然而昨天去老师家，听他讲毕业师兄的薪水，才恍然大悟，原来我一直所抱有的期待，在这样的氛围里很难实现。和朋友探讨最终发现，原来我们在研究生阶段所需要探索的那些方向，对于我们所向往的公司而言，他们只需要极少的人，而这极少的人很可能就会是更优秀的学校里更优秀的学生，而我们这种普通学校的学生，也许真的只能进入一些所谓的小厂，拿着很一般的薪水，成为他们更具有性价比的选择。到这里我已经很失望了，不知道自己应该如何继续的我研究生生活，感觉当初考研的目标彻底破灭。于是我搜来了一些大厂招聘的要求，希望能够鞭策自己去达到这些目标。</p>
-<h2 id="1-阿里"><a href="#1-阿里" class="headerlink" title="1. 阿里"></a>1. 阿里</h2><ol>
-<li><p>研发工程师</p>
-<blockquote>
-<p>或许，你来自计算机专业，机械专业，甚至可能是学生物的；<br>但是，你酷爱着计算机以及互联网技术，热衷于解决挑战性的问题，追求极致的用户体验；<br>或许，你痴迷于数据结构和算法，热衷于ACM，常常为看到“accept”而兴奋的手足舞蹈；<br>或许，你熟悉Unix/Linux/Win32环境下编程，并有相关开发经验，熟练使用调试工具，并熟悉Perl，Python，shell等脚本语言；<br>或许，你熟悉网络编程和多线程编程，对TCP/IP，HTTP等网络协议有很深的理解，并了解XML和HTML语言；<br>或许，你热衷于数据库技术，能够熟练编写SQL脚本，有MySql或Oracle应用开发经验；<br>或许，你并不熟悉Java编程语言，更精通C，C++，PHP，.NET等编程语言中的一种或几种，但你有良好和快速的学习能力；<br>有可能，你参加过大学生数学建模竞赛，“挑战杯”，机器人足球比赛等；<br>也有可能，你在学校的时候作为骨干参与学生网站的建设和开发；<br>这些，都是我们想要的。来吧，加入我们！</p>
-</blockquote>
-</li>
-<li><p>基础平台研发工程师</p>
-<blockquote>
-<p>负责云计算和大数据基础技术研发，包括不限于以下方向：<br>1、云基础设施技术，包括研发面向百万级服务器的网络（如RDMA、可编程芯片）、服务器（如异构计算）、数据中心，以及构建超大规模的基础设施智能化运维体系（如AIOps）；<br>2、虚拟化技术，包括XEN、KVM等开源技术的改进，以及也包括我们自研的SDN、VPC等网络虚拟化、存储虚拟化技术，还包括Docker等轻量级的容器方案；<br>3、MySQL、PostgrelSQL、MongoDB、Redis、HBase等开源数据库内核的改进（阿里巴巴是WebScaleSQL组织的一员，并拥有多个开源项目的committer）；<br>4、包含单集群上万个节点，多地多集群的超大规模分布式存储系统(文件系统，KVstore，BigTable等等）、分布式计算系（MapReduce，DAG，类Hive/spark的计算系统包括离线，分布式开发语言，分布式开发IDE，查询优化，流式实时计算，图计算，MPP等等）、弹性分布式资源管理和调度（海量多维度的多目标的调度系统，多个资源维度资源隔离技术等等）、机器学习平台（包括Paratemter Server，深度学习，逻辑回归等等）、异构等新型硬件上计算（包括CPU，GPU，FPGA，RDMA等等）；<br>5、大数据在线引擎体系的目标是是集广告、搜索、推荐的投放三位于一体，在近百毫秒周期内，从服务端跨越至移动端上智能，支撑总体近TB级的模型，完成知识推理向量匹配等各种召回，以及其它深度学习的排序和预测算法，参与计算的数十亿商品保持实时更新，支持数百位算法工程师面向众多场景展开测试，在算子流图化的抽象之下，引擎内的模型和数据可随时调整布局满足迭代所需。</p>
-<p>岗位要求：</p>
-<p>1、快速学习，不断突破技术瓶颈，乐于探索未知领域，随时准备好去面对新挑战；<br>2、具备优秀程序员的基本素养，对代码有洁癖，遇到问题可以一查到底，善用工具，对工程效率有自己的见解；<br>3、全栈式人才，在计算机系统结构、操作系统内核、网络、分布式系统、算法等领域有所专长相互融合；<br>4、至少需要在一门编程语言上达到精通的水平，对编程语言不封闭，有学习新语言的兴趣。</p>
-</blockquote>
-</li>
-<li><p>算法工程师-机器学习</p>
-<blockquote>
-<p>具体职责包括但不限于：<br>1、负责机器学习、深度学习领域的技术研发工作，包括但不限于神经元网络模型设计与优化、强化学习、迁移学习、主动学习、维度降低、核方法、谱方法、特征提取与稀疏学习、等级学习、推荐、随机优化等的算法和系统研发等；<br>2、负责机器学习尤其是深度学习前沿问题的探索与研究，结合未来实际应用场景，提供全面的技术解决方案；<br>3、负责提供分布式的算法实现的解决方案，大幅提升算法计算规模和性能；<br>4、负责提供大数据分析建模方案，沉淀行业解决方案，协助拓展业务边界。<br>岗位要求Qualifications<br>1、本科及以上学历，硕士博士优先，计算机、数学、电子工程、通信等相关专业；<br>2、熟悉常用机器学习算法，对模式识别、深度学习、增强学习等相关领域，极佳的工程实现能力，精通C/C++、Java、Python等至少一门编程语言；<br>3、候选人有数理分析方面良好的素养以及数理统计基础；<br>4、良好的数据敏感能力、较强的逻辑分析能力；<br>5、良好的团队合作精神，能够做到严谨、皮实、乐观；<br>6、有实际成果并发表在国际顶级会议、期刊者优先，有在ImageNet、MSCOCO、ICDAR等权威数据库上提交过结果并取得优异成绩者优先；<br>7、有deeplearning的经验，有linux下开发经验的，大规模数据处理经验优先。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="2-腾讯"><a href="#2-腾讯" class="headerlink" title="2. 腾讯"></a>2. 腾讯</h2><ol>
-<li><p>软件开发-云计算开发方向</p>
-<blockquote>
-<p> 从事腾讯云产品的架构设计、开发、优化及运营工作，包括不限于以下方向： （录取比85：1）</p>
-<p>1、虚拟化技术，包括XEN、KVM等开源技术的改进；<br>2、SDN、VPC等网络虚拟化、存储虚拟化技术，以及Docker等轻量级的容器方案；<br>3、MySQL、PostgrelSQL、MongoDB、Redis、HBase等开源数据库内核的改进；<br>4、超大规模分布式存储系统、分布式计算系统、弹性分布式资源管理和调度、机器学习平台；<br>5、新型硬件在虚拟化、计算、存储上的应用（包括GPU，FPGA，RDMA等）。<br>1、编程基本功扎实，精通C/C++/JAVA/GO/PHP等其中一门编程语言，有学习新语言的兴趣；<br>2、熟悉TCP/UDP网络协议及相关编程、进程间通讯编程；<br>3、全面、扎实的软件知识结构，掌握操作系统、计算机系统结构、设计模式、数据结构、网络安全等专业知识；<br>4、了解分布式系统设计与开发、负载均衡技术，系统容灾设计，高可用系统等知识；<br>5、快速学习，不断突破技术瓶颈，乐于探索未知领域，随时准备面对新的挑战；<br>6、具有以下条件者优先：</p>
-<pre><code>1）开源社区的活跃贡献者；</code></pre><p>2）具备公有云或企业专有云相关实践经验者。</p>
-</blockquote>
-</li>
-</ol>
-
-          
+          一、上周生活总结​    其实不算是一个一周生活总结，因为阴茎算是到达学校后的第11天了。来之前充满了对新生活的恐惧，好似也没有过多的期待，来之后觉得很多事情没有想象中那么糟糕，比如新舍友、比如我的导师。新的舍友们也都算得上是活泼的性格吧，并不是我想象中的沉闷，也并没有变成我终日一个人踽踽独行的场面
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/11/研究生第一周/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
