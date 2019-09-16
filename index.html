@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/java学习-内存划分/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/java学习-API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Z7422">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/12/java学习-内存划分/" itemprop="url">java学习--内存划分</a></h1>
+                <a class="post-title-link" href="/2019/09/16/java学习-API/" itemprop="url">java学习--Scanner&匿名对象&Random&对象数组</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T19:52:30+08:00">
-                2019-09-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T19:47:25+08:00">
+                2019-09-16
               </time>
             
 
@@ -321,21 +321,177 @@
 
       
         
-          <h1 id="Java内存划分"><a href="#Java内存划分" class="headerlink" title="Java内存划分"></a>Java内存划分</h1><p>java内存需要划分成5个部分：</p>
-<ol>
-<li><p><strong>栈</strong>（stack）：存放的都是方法中的局部变量。<strong>方法的运行在栈中。</strong></p>
-<p>​    局部变量：方法的参数，或者是方法内部的变量。</p>
-<p>​    作用域：一旦超出作用域，立刻从栈内存中消失。</p>
+          
+          一、API概述
+API：应用程序编程接口。是JDK提供给我们可以使用的类的说明文档。
+
+二、Scanner
+Scanner：可以实现键盘输入数据，到程序当中。
+
+引用类型的一般使用步骤：
+
+导包： import 包路径.类名称
+​        如果要使用的目标类，和当前类处于同一个包下，则可以省略
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/12/java学习-内存划分/#more" rel="contents">
+            <a class="btn" href="/2019/09/16/java学习-API/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </li></ol></div>
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/java学习-类与对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Z7422">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/15/java学习-类与对象/" itemprop="url">java学习--类与对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-15T19:48:48+08:00">
+                2019-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一、-面向对象思想"><a href="#一、-面向对象思想" class="headerlink" title="一、 面向对象思想"></a>一、 面向对象思想</h1><ul>
+<li><p>面向过程：当需要实现一个功能时，每一个具体的步骤都要亲历亲为，详细处理每一个细节。</p>
+</li>
+<li><p>面向对象：当需要实现一个功能时，不关心具体的步骤，而是寻找一个具有该功能的工具来实现。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/15/java学习-类与对象/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
     
     
     
@@ -912,7 +1068,7 @@
 
       
         
-          <h1 id="一、上周生活总结"><a href="#一、上周生活总结" class="headerlink" title="一、上周生活总结"></a>一、上周生活总结</h1><p>​    其实不算是一个一周生活总结，因为阴茎算是到达学校后的第11天了。来之前充满了对新生活的恐惧，好似也没有过多的期待，来之后觉得很多事情没有想象中那么糟糕，比如新舍友、比如我的导师。新的舍友们也都算得上是活泼的性格吧，并不是我想象中的沉闷，也并没有变成我终日一个人踽踽独行的场面，大家还是会一起吃饭，一起去买东西。但是我想，研究生生涯还是要向雷涛院长所说的耐得住寂寞，如大学生活一般长期处于人群之中确实是一种随波逐流的表现。</p>
+          <h1 id="一、上周生活总结"><a href="#一、上周生活总结" class="headerlink" title="一、上周生活总结"></a>一、上周生活总结</h1><p>​    其实不算是一个一周生活总结，因为已经算是到达学校后的第11天了。来之前充满了对新生活的恐惧，好似也没有过多的期待，来之后觉得很多事情没有想象中那么糟糕，比如新舍友、比如我的导师。新的舍友们也都算得上是活泼的性格吧，并不是我想象中的沉闷，也并没有变成我终日一个人踽踽独行的场面，大家还是会一起吃饭，一起去买东西。但是我想，研究生生涯还是要向雷涛院长所说的耐得住寂寞，如大学生活一般长期处于人群之中确实是一种随波逐流的表现。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/09/11/研究生第一周/#more" rel="contents">
@@ -999,7 +1155,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

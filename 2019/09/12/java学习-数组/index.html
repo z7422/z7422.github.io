@@ -86,10 +86,16 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、数组的定义 定义：数组是一种容器，可以同时存放多个数据值  特点：  数组是一种引用数据类型。 数组当中的多个数据，类型必须统一。 数组的长度在程序运行期间不可改变。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-15T05:38:23.195Z">
+<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568533844087.png">
+<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568533905294.png">
+<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568534028051.png">
+<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568534403207.png">
+<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568535685912.png">
+<meta property="og:updated_time" content="2019-09-16T13:32:18.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--数组">
 <meta name="twitter:description" content="一、数组的定义 定义：数组是一种容器，可以同时存放多个数据值  特点：  数组是一种引用数据类型。 数组当中的多个数据，类型必须统一。 数组的长度在程序运行期间不可改变。">
+<meta name="twitter:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568533844087.png">
 
 
 
@@ -416,6 +422,55 @@ arrayB = new int[5];//动态初始化拆分
 <p>tips: 索引值从0开始，直到“数组长度-1”为止。</p>
 </li>
 </ul>
+<h1 id="四、数组的常见问题"><a href="#四、数组的常见问题" class="headerlink" title="四、数组的常见问题"></a>四、数组的常见问题</h1><h2 id="1-数组索引越界异常"><a href="#1-数组索引越界异常" class="headerlink" title="1. 数组索引越界异常"></a>1. 数组索引越界异常</h2><p>数组索引越界异常(ArrayIndexOutOfBoundsEexception)是指访问数组元素时，索引编号并不存在，就会发生数组索引越界异常。（数组的索引编号从0开始，一直到“数组的长度-1”为止）</p>
+<h2 id="2-空指针异常"><a href="#2-空指针异常" class="headerlink" title="2. 空指针异常"></a>2. 空指针异常</h2><p>所有的引用类型变量，都可以复制为一个null值，代表其中什么都没有。</p>
+<p>空指针异常（NullPointerException）:数组必须new初始化才能使用其中的元素，如果数组值赋值为null，而没有初始化创建，那么在使用元素时会发生空指针异常。</p>
+<h1 id="五、获取数组的长度"><a href="#五、获取数组的长度" class="headerlink" title="五、获取数组的长度"></a>五、获取数组的长度</h1><p>格式：数组长度.length，得到一个int数字即数组长度。</p>
+<p>数组一旦创建（new的那个数组），程序运行期间长度不可改变。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span>[] arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];<span class="comment">//arrayA只是数组名，可以改变它的指向的地址空间，但是new int[3]时堆中创建的数组，长度不能发生改变。</span></span><br><span class="line">arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];<span class="comment">//重新创建数组赋值给arrayA，但并不代表数组可以改变长度，int[5]是一个新的数组。</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="六、数组的遍历输出"><a href="#六、数组的遍历输出" class="headerlink" title="六、数组的遍历输出"></a>六、数组的遍历输出</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>;i &lt; array.lenth ;i ++)&#123;</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">&#125;<span class="comment">//循环遍历可以输入数组长度</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="七、数组作为方法参数"><a href="#七、数组作为方法参数" class="headerlink" title="七、数组作为方法参数"></a>七、数组作为方法参数</h1><p>数组可以作为方法的参数。</p>
+<p>当调用方法时，进行传参，传递的参数本质上是数组的地址值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span>[] array)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i &lt; array.length ; i++)</span><br><span class="line">        System.out.println(array[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="八、数组作为返回值"><a href="#八、数组作为返回值" class="headerlink" title="八、数组作为返回值"></a>八、数组作为返回值</h1><p>一个方法可以有0、1、多个参数；但是只能有一个或0个返回值，不能有多个返回值。</p>
+<p>如果希望有多个返回值，可以i用数组作为返回值即可。</p>
+<p>任何数据类型都能作为方法的参数类型或者返回值类型。</p>
+<p>数组作为方法的参数或返回值，传递的本质上都是数组的地址值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] calculate(<span class="keyword">int</span> a ,<span class="keyword">int</span> b,<span class="keyword">int</span> c)&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = a+b+c;</span><br><span class="line">    <span class="keyword">int</span> avg = sum/<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    array[<span class="number">0</span>]=sum;</span><br><span class="line">    array[<span class="number">1</span>]=avg;</span><br><span class="line">    <span class="comment">//int []array = &#123;sum , avg&#125;; 也可以使用这种形式</span></span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="九、Java内存划分"><a href="#九、Java内存划分" class="headerlink" title="九、Java内存划分"></a>九、Java内存划分</h1><p><strong>java内存需要划分成5个部分</strong>：</p>
+<ol>
+<li><p><strong>栈</strong>（stack）：存放的都是方法中的局部变量。<strong>方法的运行在栈中。</strong></p>
+<p>​    局部变量：方法的参数，或者是方法内部的变量。</p>
+<p>​    作用域：一旦超出作用域，立刻从栈内存中消失。</p>
+<!--more-->
+</li>
+<li><p><strong>堆</strong>（heap）：凡是new出来的东西，都在堆中。</p>
+<p>​    堆内存中的东西都有一个16进制的地址值。</p>
+<p>​    堆内存中的数据都具有默认值。</p>
+</li>
+<li><p><strong>方法区</strong>（Method Area）：存储.class相关的信息，包含方法的信息。</p>
+</li>
+<li><p><strong>本地方法栈</strong>（Native Method Stack）：与操作系统相关。</p>
+</li>
+<li><p><strong>寄存器</strong>（PC Register）：与CPU相关。</p>
+</li>
+</ol>
+<h1 id="十、一个数组的内存图"><a href="#十、一个数组的内存图" class="headerlink" title="十、一个数组的内存图"></a>十、一个数组的内存图</h1><p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568533844087.png" alt="1568533844087"></p>
+<p>​                                                            图1： 一个数组的内存图（无方法区）</p>
+<p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568533905294.png" alt="1568533905294"></p>
+<p>​                                                                图2 ：一个数组内存图</p>
+<h1 id="十一、两个数组的内存图"><a href="#十一、两个数组的内存图" class="headerlink" title="十一、两个数组的内存图"></a>十一、两个数组的内存图</h1><p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568534028051.png" alt="1568534028051"></p>
+<p>​                                                                图3：两个数组的内存图（无方法区）</p>
+<p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568534403207.png" alt="1568534403207"></p>
+<p>​                                                                图4：两个数组的内存图</p>
+<h1 id="十二、两个引用指向同一个数组的内存图"><a href="#十二、两个引用指向同一个数组的内存图" class="headerlink" title="十二、两个引用指向同一个数组的内存图"></a>十二、两个引用指向同一个数组的内存图</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arrayB[] = arrayA;<span class="comment">//将arrayA数组的地址值，赋值给arrayB</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568535685912.png" alt="1568535685912"></p>
+<p>​                                                            图5：两个引用指向同一个数组的内存图（无方法区）</p>
 
       
     </div>
@@ -529,7 +584,7 @@ arrayB = new int[5];//动态初始化拆分
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +630,7 @@ arrayB = new int[5];//动态初始化拆分
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、数组的定义"><span class="nav-number">1.</span> <span class="nav-text">一、数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数组的初始化"><span class="nav-number">2.</span> <span class="nav-text">二、数组的初始化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、数组的定义"><span class="nav-number">1.</span> <span class="nav-text">一、数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数组的初始化"><span class="nav-number">2.</span> <span class="nav-text">二、数组的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、数组的常见问题"><span class="nav-number">3.</span> <span class="nav-text">四、数组的常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组索引越界异常"><span class="nav-number">3.1.</span> <span class="nav-text">1. 数组索引越界异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空指针异常"><span class="nav-number">3.2.</span> <span class="nav-text">2. 空指针异常</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、获取数组的长度"><span class="nav-number">4.</span> <span class="nav-text">五、获取数组的长度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、数组的遍历输出"><span class="nav-number">5.</span> <span class="nav-text">六、数组的遍历输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、数组作为方法参数"><span class="nav-number">6.</span> <span class="nav-text">七、数组作为方法参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、数组作为返回值"><span class="nav-number">7.</span> <span class="nav-text">八、数组作为返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、Java内存划分"><span class="nav-number">8.</span> <span class="nav-text">九、Java内存划分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、一个数组的内存图"><span class="nav-number">9.</span> <span class="nav-text">十、一个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一、两个数组的内存图"><span class="nav-number">10.</span> <span class="nav-text">十一、两个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十二、两个引用指向同一个数组的内存图"><span class="nav-number">11.</span> <span class="nav-text">十二、两个引用指向同一个数组的内存图</span></a></li></ol></div>
             
 
           </div>
