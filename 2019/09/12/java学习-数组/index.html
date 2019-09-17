@@ -91,7 +91,7 @@
 <meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568534028051.png">
 <meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568534403207.png">
 <meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568535685912.png">
-<meta property="og:updated_time" content="2019-09-16T13:32:18.286Z">
+<meta property="og:updated_time" content="2019-09-17T09:42:54.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--数组">
 <meta name="twitter:description" content="一、数组的定义 定义：数组是一种容器，可以同时存放多个数据值  特点：  数组是一种引用数据类型。 数组当中的多个数据，类型必须统一。 数组的长度在程序运行期间不可改变。">
@@ -404,31 +404,43 @@
 <li><p>静态初始化没有直接指定长度，但是仍然会自动推算得到长度。</p>
 </li>
 <li><p>静态/静态初始化标准格式都可以拆分成为两个步骤。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arrayA ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>静态初始化一旦使用省略格式则不可拆分。</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arrayA ;</span><br><span class="line">arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>&#125;;<span class="comment">//静态初始化拆分</span></span><br><span class="line"><span class="keyword">int</span>[] arrayB;</span><br><span class="line">arrayB = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];<span class="comment">//动态初始化拆分</span></span><br></pre></td></tr></table></figure>
+
 
 
 </li>
 </ol>
 </li>
 </ul>
-<pre><code> arrayA = new int[]{10,20,30};//静态初始化拆分
-
- int[] arrayB;
-
-
-arrayB = new int[5];//动态初始化拆分
-     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">     3. 静态初始化一旦使用省略格式则不可拆分。</span><br><span class="line">  </span><br><span class="line">3. **使用建议**：不确定数组中具体内容时使用静态初始化，否则使用动态初始化。</span><br><span class="line"></span><br><span class="line"># 三、数组的打印</span><br><span class="line"></span><br><span class="line">- 直接打印数组名称，得到的是数组对应的**内存地址哈希值**（一个16进制的内存地址值）。</span><br><span class="line"></span><br><span class="line">  ```java</span><br><span class="line">  int[] array = &#123;10,20,30&#125;;</span><br><span class="line">  System.out.println(array); //[I75412c2f</span><br><span class="line">  System.out.println(array[0]);//访问数组元素 ，输出10</span><br></pre></td></tr></table></figure></code></pre><ul>
+<ol start="3">
+<li><strong>使用建议</strong>：不确定数组中具体内容时使用静态初始化，否则使用动态初始化。</li>
+</ol>
+<h1 id="三、数组的打印"><a href="#三、数组的打印" class="headerlink" title="三、数组的打印"></a>三、数组的打印</h1><ul>
+<li><p>直接打印数组名称，得到的是数组对应的<strong>内存地址哈希值</strong>（一个16进制的内存地址值）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array = &#123;<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>&#125;;</span><br><span class="line">System.out.println(array); <span class="comment">//[I75412c2f</span></span><br><span class="line">System.out.println(array[<span class="number">0</span>]);<span class="comment">//访问数组元素 ，输出10</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>访问数组元素：数组名称[索引值]。</p>
 <p>tips: 索引值从0开始，直到“数组长度-1”为止。</p>
 </li>
 </ul>
-<h1 id="四、数组的常见问题"><a href="#四、数组的常见问题" class="headerlink" title="四、数组的常见问题"></a>四、数组的常见问题</h1><h2 id="1-数组索引越界异常"><a href="#1-数组索引越界异常" class="headerlink" title="1. 数组索引越界异常"></a>1. 数组索引越界异常</h2><p>数组索引越界异常(ArrayIndexOutOfBoundsEexception)是指访问数组元素时，索引编号并不存在，就会发生数组索引越界异常。（数组的索引编号从0开始，一直到“数组的长度-1”为止）</p>
-<h2 id="2-空指针异常"><a href="#2-空指针异常" class="headerlink" title="2. 空指针异常"></a>2. 空指针异常</h2><p>所有的引用类型变量，都可以复制为一个null值，代表其中什么都没有。</p>
-<p>空指针异常（NullPointerException）:数组必须new初始化才能使用其中的元素，如果数组值赋值为null，而没有初始化创建，那么在使用元素时会发生空指针异常。</p>
-<h1 id="五、获取数组的长度"><a href="#五、获取数组的长度" class="headerlink" title="五、获取数组的长度"></a>五、获取数组的长度</h1><p>格式：数组长度.length，得到一个int数字即数组长度。</p>
-<p>数组一旦创建（new的那个数组），程序运行期间长度不可改变。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span>[] arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];<span class="comment">//arrayA只是数组名，可以改变它的指向的地址空间，但是new int[3]时堆中创建的数组，长度不能发生改变。</span></span><br><span class="line">arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];<span class="comment">//重新创建数组赋值给arrayA，但并不代表数组可以改变长度，int[5]是一个新的数组。</span></span><br></pre></td></tr></table></figure>
+<h1 id="四、数组的常见问题"><a href="#四、数组的常见问题" class="headerlink" title="四、数组的常见问题"></a>四、数组的常见问题</h1><h2 id="1-数组索引越界异常"><a href="#1-数组索引越界异常" class="headerlink" title="1. 数组索引越界异常"></a>1. 数组索引越界异常</h2><p>​        数组索引越界异常(ArrayIndexOutOfBoundsEexception)是指访问数组元素时，索引编号并不存在，就会发生数组索引越界异常。（数组的索引编号从0开始，一直到“数组的长度-1”为止）</p>
+<h2 id="2-空指针异常"><a href="#2-空指针异常" class="headerlink" title="2. 空指针异常"></a>2. 空指针异常</h2><p>​        所有的引用类型变量，都可以复制为一个null值，代表其中什么都没有。</p>
+<p>​        空指针异常（NullPointerException）:数组必须new初始化才能使用其中的元素，如果数组值赋值为null，而没有初始化创建，那么在使用元素时会发生空指针异常。</p>
+<h1 id="五、获取数组的长度"><a href="#五、获取数组的长度" class="headerlink" title="五、获取数组的长度"></a>五、获取数组的长度</h1><ul>
+<li><p>格式：数组长度.length，得到一个int数字即数组长度。</p>
+</li>
+<li><p>数组一旦创建（new的那个数组），程序运行期间长度不可改变。</p>
+<p>​    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line"><span class="comment">//arrayA只是数组名，可以改变它的指向的地址空间，但是new int[3]时堆中创建的数组，长度不能发生改变。</span></span><br><span class="line">arrayA = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="comment">//重新创建数组赋值给arrayA，但并不代表数组可以改变长度，int[5]是一个新的数组。</span></span><br></pre></td></tr></table></figure>
 
+
+
+
+</li>
+</ul>
 <h1 id="六、数组的遍历输出"><a href="#六、数组的遍历输出" class="headerlink" title="六、数组的遍历输出"></a>六、数组的遍历输出</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>;i &lt; array.lenth ;i ++)&#123;</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">&#125;<span class="comment">//循环遍历可以输入数组长度</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="七、数组作为方法参数"><a href="#七、数组作为方法参数" class="headerlink" title="七、数组作为方法参数"></a>七、数组作为方法参数</h1><p>数组可以作为方法的参数。</p>
@@ -630,7 +642,7 @@ arrayB = new int[5];//动态初始化拆分
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、数组的定义"><span class="nav-number">1.</span> <span class="nav-text">一、数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数组的初始化"><span class="nav-number">2.</span> <span class="nav-text">二、数组的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、数组的常见问题"><span class="nav-number">3.</span> <span class="nav-text">四、数组的常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组索引越界异常"><span class="nav-number">3.1.</span> <span class="nav-text">1. 数组索引越界异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空指针异常"><span class="nav-number">3.2.</span> <span class="nav-text">2. 空指针异常</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、获取数组的长度"><span class="nav-number">4.</span> <span class="nav-text">五、获取数组的长度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、数组的遍历输出"><span class="nav-number">5.</span> <span class="nav-text">六、数组的遍历输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、数组作为方法参数"><span class="nav-number">6.</span> <span class="nav-text">七、数组作为方法参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、数组作为返回值"><span class="nav-number">7.</span> <span class="nav-text">八、数组作为返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、Java内存划分"><span class="nav-number">8.</span> <span class="nav-text">九、Java内存划分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、一个数组的内存图"><span class="nav-number">9.</span> <span class="nav-text">十、一个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一、两个数组的内存图"><span class="nav-number">10.</span> <span class="nav-text">十一、两个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十二、两个引用指向同一个数组的内存图"><span class="nav-number">11.</span> <span class="nav-text">十二、两个引用指向同一个数组的内存图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、数组的定义"><span class="nav-number">1.</span> <span class="nav-text">一、数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数组的初始化"><span class="nav-number">2.</span> <span class="nav-text">二、数组的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、数组的打印"><span class="nav-number">3.</span> <span class="nav-text">三、数组的打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、数组的常见问题"><span class="nav-number">4.</span> <span class="nav-text">四、数组的常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组索引越界异常"><span class="nav-number">4.1.</span> <span class="nav-text">1. 数组索引越界异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空指针异常"><span class="nav-number">4.2.</span> <span class="nav-text">2. 空指针异常</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、获取数组的长度"><span class="nav-number">5.</span> <span class="nav-text">五、获取数组的长度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、数组的遍历输出"><span class="nav-number">6.</span> <span class="nav-text">六、数组的遍历输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、数组作为方法参数"><span class="nav-number">7.</span> <span class="nav-text">七、数组作为方法参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、数组作为返回值"><span class="nav-number">8.</span> <span class="nav-text">八、数组作为返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、Java内存划分"><span class="nav-number">9.</span> <span class="nav-text">九、Java内存划分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、一个数组的内存图"><span class="nav-number">10.</span> <span class="nav-text">十、一个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一、两个数组的内存图"><span class="nav-number">11.</span> <span class="nav-text">十一、两个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十二、两个引用指向同一个数组的内存图"><span class="nav-number">12.</span> <span class="nav-text">十二、两个引用指向同一个数组的内存图</span></a></li></ol></div>
             
 
           </div>

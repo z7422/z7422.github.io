@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="一、方法的定义与调用 格式:  修饰符 返回值类型 方法名（参数列表）{ ……..//代码实现 return 结果； }   修饰符：public static  返回值类型：方法运行结果的数据类型  参数列表：调用方法时传递所需要的未知数据  return：方法执行后返回结果">
+<meta name="description" content="一、方法的定义与调用 格式: 1234567修饰符 返回值类型 方法名（参数列表）&amp;#123;........//代码实现return 结果；&amp;#125;   修饰符：public static  返回值类型：方法运行结果的数据类型  参数列表：调用方法时传递所需要的未知数据  return：方法执行后返回结果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java学习--方法">
 <meta property="og:url" content="http://yoursite.com/2019/09/11/java学习-方法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、方法的定义与调用 格式:  修饰符 返回值类型 方法名（参数列表）{ ……..//代码实现 return 结果； }   修饰符：public static  返回值类型：方法运行结果的数据类型  参数列表：调用方法时传递所需要的未知数据  return：方法执行后返回结果">
+<meta property="og:description" content="一、方法的定义与调用 格式: 1234567修饰符 返回值类型 方法名（参数列表）&amp;#123;........//代码实现return 结果；&amp;#125;   修饰符：public static  返回值类型：方法运行结果的数据类型  参数列表：调用方法时传递所需要的未知数据  return：方法执行后返回结果">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-15T05:39:31.347Z">
+<meta property="og:updated_time" content="2019-09-17T09:39:33.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--方法">
-<meta name="twitter:description" content="一、方法的定义与调用 格式:  修饰符 返回值类型 方法名（参数列表）{ ……..//代码实现 return 结果； }   修饰符：public static  返回值类型：方法运行结果的数据类型  参数列表：调用方法时传递所需要的未知数据  return：方法执行后返回结果">
+<meta name="twitter:description" content="一、方法的定义与调用 格式: 1234567修饰符 返回值类型 方法名（参数列表）&amp;#123;........//代码实现return 结果；&amp;#125;   修饰符：public static  返回值类型：方法运行结果的数据类型  参数列表：调用方法时传递所需要的未知数据  return：方法执行后返回结果">
 
 
 
@@ -323,12 +323,8 @@
       
         <h1 id="一、方法的定义与调用"><a href="#一、方法的定义与调用" class="headerlink" title="一、方法的定义与调用"></a>一、方法的定义与调用</h1><ul>
 <li><p>格式:</p>
-<blockquote>
-<p>修饰符 返回值类型 方法名（参数列表）{</p>
-<p>……..//代码实现</p>
-<p>return 结果；</p>
-<p>}</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名（参数列表）&#123;</span><br><span class="line"></span><br><span class="line">........//代码实现</span><br><span class="line"></span><br><span class="line">return 结果；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li><p>修饰符：public static</p>
 </li>
@@ -347,20 +343,13 @@
 <li>打印调用</li>
 <li>赋值调用</li>
 </ol>
-<blockquote>
-<p>public class Demo02MethodDefine {</p>
-<pre><code>public static void main(String[] args) {
-    sum(10,20);//1.单独调用：方法名称（参数）；
-    System.out.println(sum(10,20));//2.打印调用
-    int re = sum(10,20);//3.赋值调用
-    System.out.println(re);
-}
-public static int sum(int a,int b){
-    int result = a + b;
-    return result;
-}</code></pre><p>}</p>
-</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02MethodDefine</span> </span>&#123;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">     sum(<span class="number">10</span>,<span class="number">20</span>);<span class="comment">//1.单独调用：方法名称（参数）；</span></span><br><span class="line">     System.out.println(sum(<span class="number">10</span>,<span class="number">20</span>));<span class="comment">//2.打印调用</span></span><br><span class="line">     <span class="keyword">int</span> re = sum(<span class="number">10</span>,<span class="number">20</span>);<span class="comment">//3.赋值调用</span></span><br><span class="line">     System.out.println(re);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> result = a + b;</span><br><span class="line">     <span class="keyword">return</span> result;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 </li>
+</ul>
+<ul>
 <li><p>定义方法的注意事项：</p>
 <ol>
 <li>定义的位置：在类中，方法外</li>
@@ -383,11 +372,9 @@ public static int sum(int a,int b){
 </ol>
 </li>
 <li><p>示例：</p>
-<p>public static int sum(int a ,int b){…}</p>
-<p>public static int sum(int a ,int b,int c){…}</p>
-<p>public static int sum(int a ,int b,int c , int d){…}</p>
-<p>public static double sum(double a ,double b){…}</p>
-<p>//在调用输出语句时，println方法也是进行了多种数据类型的重载形式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a ,<span class="keyword">int</span> b)</span></span>&#123;...&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a ,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;...&#125;</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a ,<span class="keyword">int</span> b,<span class="keyword">int</span> c , <span class="keyword">int</span> d)</span></span>&#123;...&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span> a ,<span class="keyword">double</span> b)</span></span>&#123;...&#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//在调用输出语句时，println方法也是进行了多种数据类型的重载形式</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 
