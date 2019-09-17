@@ -86,16 +86,16 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、 面向对象思想 面向过程：当需要实现一个功能时，每一个具体的步骤都要亲历亲为，详细处理每一个细节。  面向对象：当需要实现一个功能时，不关心具体的步骤，而是寻找一个具有该功能的工具来实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568550963344.png">
-<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552062582.png">
-<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552369254.png">
-<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552891254.png">
-<meta property="og:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568553226603.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568550963344.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552062582.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552369254.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552891254.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568553226603.png">
 <meta property="og:updated_time" content="2019-09-17T09:31:30.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--类与对象">
 <meta name="twitter:description" content="一、 面向对象思想 面向过程：当需要实现一个功能时，每一个具体的步骤都要亲历亲为，详细处理每一个细节。  面向对象：当需要实现一个功能时，不关心具体的步骤，而是寻找一个具有该功能的工具来实现。">
-<meta name="twitter:image" content="c:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568550963344.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568550963344.png">
 
 
 
@@ -367,21 +367,21 @@
 <p>使用成员方法：对象名.成员方法名（参数）</p>
 </li>
 </ol>
-<h1 id="四、一个对象的内存图"><a href="#四、一个对象的内存图" class="headerlink" title="四、一个对象的内存图"></a>四、一个对象的内存图</h1><p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568550963344.png" alt="1568550963344"></p>
+<h1 id="四、一个对象的内存图"><a href="#四、一个对象的内存图" class="headerlink" title="四、一个对象的内存图"></a>四、一个对象的内存图</h1><p><img src="/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568550963344.png" alt="1568550963344"></p>
 <p>​        如图所示，在程序运行前将class信息存入方法区，从main方法开始执行。创建Phone的对象one时，new Phone()的信息放入堆内存中，包含成员变量及成员方法；成员变量存储默认值直接存放在堆中；成员方法存储的是方法的内存地址值，指向方法区中类的成员方法。对象one在栈中存放的一个内存地址值，指向堆内存。</p>
 <p>​        使用one.brand=“苹果”等语句向成员变量赋值，是通过栈中one指向的地址访问堆内存中的成员变量，对其赋值。使用one.call(“乔布斯”)语句，有两个步骤，首先通过栈内存中的值访问堆内存，再通过堆中的地址访问方法区中的方法；call方法运行时需要进栈（压栈），将参数传递并进行方法调用，调用结束call方法出栈。继续进行one.sendMessage()方法，使之进栈并调用方法，随后出栈。main方法结束，同样出栈，程序停止。</p>
 <p>​        <strong>Tips</strong>：<strong>对象调用方法时，根据对象中方法标记（地址值），去类中寻找方法信息。这样哪怕是多个对象，方法信息 只保存一份，节约内存空间</strong></p>
-<h1 id="五、两个对象使用同一个方法的内存图"><a href="#五、两个对象使用同一个方法的内存图" class="headerlink" title="五、两个对象使用同一个方法的内存图"></a>五、两个对象使用同一个方法的内存图</h1><p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552062582.png" alt="1568552062582"></p>
+<h1 id="五、两个对象使用同一个方法的内存图"><a href="#五、两个对象使用同一个方法的内存图" class="headerlink" title="五、两个对象使用同一个方法的内存图"></a>五、两个对象使用同一个方法的内存图</h1><p><img src="/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552062582.png" alt="1568552062582"></p>
 <p>​        程序运行时的步骤同上，只不过在调用两个对象的成员方法时，最终都访问了方法区类中的成员方法。</p>
-<h1 id="六、两个引用指向同一个对象的内存图"><a href="#六、两个引用指向同一个对象的内存图" class="headerlink" title="六、两个引用指向同一个对象的内存图"></a>六、两个引用指向同一个对象的内存图</h1><p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552369254.png" alt="1568552369254"></p>
+<h1 id="六、两个引用指向同一个对象的内存图"><a href="#六、两个引用指向同一个对象的内存图" class="headerlink" title="六、两个引用指向同一个对象的内存图"></a>六、两个引用指向同一个对象的内存图</h1><p><img src="/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552369254.png" alt="1568552369254"></p>
 <p>两个引用名指向同一个对象空间。</p>
 <h1 id="七、使用对象类型作为方法的参数"><a href="#七、使用对象类型作为方法的参数" class="headerlink" title="七、使用对象类型作为方法的参数"></a>七、使用对象类型作为方法的参数</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo04</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Phone one = <span class="keyword">new</span> Phone;</span><br><span class="line">        one.brand=<span class="string">"iphone"</span>;</span><br><span class="line">        one.prive = <span class="number">8388.0</span>;</span><br><span class="line">        one.color=<span class="string">"black"</span>;</span><br><span class="line">        method(one);<span class="comment">//传递进去的参数其实就是地址值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span> <span class="params">(Phone param)</span></span>&#123;</span><br><span class="line">        System.out.println(param.brand);<span class="comment">//iphone</span></span><br><span class="line">        System.out.println(param.price);<span class="comment">//8388.0</span></span><br><span class="line">        System.out.println(param.color);<span class="comment">//black</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552891254.png" alt="1568552891254"></p>
+<p><img src="/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568552891254.png" alt="1568552891254"></p>
 <p><strong>当一个对象作为参数，传递到方法当中时，实际上传递进去的是对象的<u>地址值</u>。</strong></p>
 <h1 id="八、使用对象类型作为方法的返回值"><a href="#八、使用对象类型作为方法的返回值" class="headerlink" title="八、使用对象类型作为方法的返回值"></a>八、使用对象类型作为方法的返回值</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo05</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Phone two = getPhone();</span><br><span class="line">        System.out.println(param.brand);<span class="comment">//iphone</span></span><br><span class="line">        System.out.println(param.price);<span class="comment">//8388.0</span></span><br><span class="line">        System.out.println(param.color);<span class="comment">//black</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Phone <span class="title">getPhone</span> <span class="params">()</span></span>&#123;</span><br><span class="line">        Phone one = <span class="keyword">new</span> Phone;</span><br><span class="line">        one.brand=<span class="string">"iphone"</span>;</span><br><span class="line">        one.prive = <span class="number">8388.0</span>;</span><br><span class="line">        one.color=<span class="string">"black"</span>;</span><br><span class="line">        <span class="keyword">return</span> one;<span class="comment">//返回一个对象类型的值，实际上返回的也是对象的地址值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568553226603.png" alt="1568553226603"></p>
+<p><img src="/2019/09/15/java学习-类与对象/C:%5CUsers%5CZou%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568553226603.png" alt="1568553226603"></p>
 <p>​        调用getPhone后，one得到的是new Phone()的地址值，随后返回one即返回地址值0x666，getPhone()得到的值也是0x666，然后赋值给two。</p>
 <h1 id="九、局部变量与成员变量的区别"><a href="#九、局部变量与成员变量的区别" class="headerlink" title="九、局部变量与成员变量的区别"></a>九、局部变量与成员变量的区别</h1><ol>
 <li><p><strong>定义的位置不同</strong>：</p>
@@ -519,7 +519,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
