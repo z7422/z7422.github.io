@@ -79,14 +79,19 @@
 
 
 
+<meta name="description" content="一、static静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   二、静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。 123456789101112131415">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java学习--static关键字">
 <meta property="og:url" content="http://yoursite.com/2019/09/18/java学习-static关键字/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、static静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   二、静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。 123456789101112131415">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-18T12:50:06.402Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/18/java学习-static关键字/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-static%E5%85%B3%E9%94%AE%E5%AD%97%5C%E5%86%85%E5%AD%98%E5%9B%BEstatic.png">
+<meta property="og:updated_time" content="2019-09-18T13:32:10.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--static关键字">
+<meta name="twitter:description" content="一、static静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   二、静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。 123456789101112131415">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/18/java学习-static关键字/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-static%E5%85%B3%E9%94%AE%E5%AD%97%5C%E5%86%85%E5%AD%98%E5%9B%BEstatic.png">
 
 
 
@@ -269,6 +274,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -296,7 +323,55 @@
       
 
       
-        
+        <h1 id="一、static静态关键字"><a href="#一、static静态关键字" class="headerlink" title="一、static静态关键字"></a>一、static静态关键字</h1><ul>
+<li><p><strong>static</strong>:只在类当中保存唯一一份数据，所有本类对象共享同一份。</p>
+</li>
+<li><p>一旦使用static关键字，这样的内容不再属于对象自己，而是<strong>属于类</strong>的，凡是本类的对象都共享同一份。</p>
+</li>
+</ul>
+<h1 id="二、静态static关键字修饰成员变量"><a href="#二、静态static关键字修饰成员变量" class="headerlink" title="二、静态static关键字修饰成员变量"></a>二、静态static关键字修饰成员变量</h1><ul>
+<li><p>如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id ;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">static</span> String room;<span class="comment">//静态变量，大家统一用一份</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> idCounter = <span class="number">0</span>;<span class="comment">//学号计数器，每当new一的新对象就++</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = ++idCounter;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> id )</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.id = ++idCounter;</span><br><span class="line">    &#125;</span><br><span class="line">    ....<span class="comment">//getter&amp;&amp;setter省略不写</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span></span>&#123;</span><br><span class="line">    Student one = <span class="keyword">new</span> Student(<span class="string">"zhangsna"</span>,<span class="number">19</span>);</span><br><span class="line">    Student two = <span class="keyword">new</span> Student(<span class="string">"lisi"</span>,<span class="number">14</span>);</span><br><span class="line">    Student.room = <span class="string">"101教室"</span>;</span><br><span class="line">    <span class="comment">//id自动生成</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h1 id="三、静态static关键字修饰成员方法"><a href="#三、静态static关键字修饰成员方法" class="headerlink" title="三、静态static关键字修饰成员方法"></a>三、静态static关键字修饰成员方法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;<span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> numStatic;<span class="comment">//静态变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">"这是一个成员方法"</span>);</span><br><span class="line">        System.out.println(num);<span class="comment">//成员方法可以访问成员变量</span></span><br><span class="line">        System.out.println(numStatic);<span class="comment">//成员方法可以访问静态变量</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">methodStatic</span><span class="params">()</span></span>&#123;</span><br><span class="line">   	 	System.out.println(<span class="string">"这是一个静态方法"</span>);</span><br><span class="line">        <span class="comment">//System.out.println(num); //静态方法不能直接访问非静态</span></span><br><span class="line">        System.out.println(numStatic);<span class="comment">//静态方法可以访问静态变量</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//一旦使用static修饰成员方法就成为静态方法。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Myclass.methodStatic();通过类名称调用静态方法</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>静态方法不属于对象，而是属于类的。</li>
+<li>如果没有static关键字，那么必须先创建对象，然后通过对象调用方法。</li>
+<li>有static关键字，即静态方法，可以通过对象名进行调用，也可以通过类名进行调用（推荐）。</li>
+<li>对于<strong>本类</strong>当中的静态方法，可以省略类名称。</li>
+<li>注意事项：<ol>
+<li>静态不能直接访问非静态。（原因：因为在内存当中是<strong>先</strong>有的静态内容，后有的非静态内容。）</li>
+<li>静态方法中不能使用this。（原因：this代表当前对象，通过谁调用的方法，谁就是当前对象。</li>
+</ol>
+</li>
+</ul>
+<h1 id="四、静态static的内存图"><a href="#四、静态static的内存图" class="headerlink" title="四、静态static的内存图"></a>四、静态static的内存图</h1><ul>
+<li><p>方法区中有一块独立的空间叫做<strong>静态区</strong>，存储静态相关的东西。</p>
+</li>
+<li><p>根据类名称访问静态成员变量，全程与对象无关，只与类有关。</p>
+</li>
+</ul>
+<p><img src="//yoursite.com/2019/09/18/java学习-static关键字/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-static%E5%85%B3%E9%94%AE%E5%AD%97%5C%E5%86%85%E5%AD%98%E5%9B%BEstatic.png" alt></p>
+<h1 id="五、静态代码块"><a href="#五、静态代码块" class="headerlink" title="五、静态代码块"></a>五、静态代码块</h1><ul>
+<li><p><strong>格式</strong>：</p>
+<p>public class 类名称{</p>
+<p>​    static{</p>
+<pre><code>//静态代码块的内容</code></pre><p>​    }</p>
+<p>}</p>
+</li>
+<li><p><strong>特点</strong>：当第一次用到本类是，静态代码块执行<strong>唯一</strong>的一次。</p>
+</li>
+<li><p><strong>注意</strong>：静态内容总是优先于非静态内容。所以静态代码块比构造方法先执行。</p>
+</li>
+<li><p>静态代码块的典型<strong>用途</strong>：用来一次性的对静态成员变量进行赋值。</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -329,6 +404,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/18/java学习-工具类/" rel="prev" title="java学习--工具类">
+                java学习--工具类 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -380,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -396,7 +484,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -432,6 +520,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、static静态关键字"><span class="nav-number">1.</span> <span class="nav-text">一、static静态关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、静态static关键字修饰成员变量"><span class="nav-number">2.</span> <span class="nav-text">二、静态static关键字修饰成员变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、静态static关键字修饰成员方法"><span class="nav-number">3.</span> <span class="nav-text">三、静态static关键字修饰成员方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、静态static的内存图"><span class="nav-number">4.</span> <span class="nav-text">四、静态static的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、静态代码块"><span class="nav-number">5.</span> <span class="nav-text">五、静态代码块</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
