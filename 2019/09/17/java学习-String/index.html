@@ -87,7 +87,7 @@
 <meta property="og:description" content="一、字符串概述及特点 java.lang.String类代表字符串 java程序中所有字符串字面值都作为此类的实例实现，即程序中所有含双引号的字符串都被视为String类的对象。（就算没有new也是） 特点： 字符串的内容永远不可改变，是一个常量。 正是因为字符串不可改变，所以字符串是可以共享使用的。（内容相同时不用重复创建） 字符串在效果上相当与char[]字符数组，但是底层原理是byte[]字">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/17/java学习-String/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-String%5C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0.png">
-<meta property="og:updated_time" content="2019-09-17T12:59:53.963Z">
+<meta property="og:updated_time" content="2019-09-18T11:40:44.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--String">
 <meta name="twitter:description" content="一、字符串概述及特点 java.lang.String类代表字符串 java程序中所有字符串字面值都作为此类的实例实现，即程序中所有含双引号的字符串都被视为String类的对象。（就算没有new也是） 特点： 字符串的内容永远不可改变，是一个常量。 正是因为字符串不可改变，所以字符串是可以共享使用的。（内容相同时不用重复创建） 字符串在效果上相当与char[]字符数组，但是底层原理是byte[]字">
@@ -365,6 +365,77 @@
 </ul>
 </li>
 </ul>
+<h1 id="四、字符串常用方法"><a href="#四、字符串常用方法" class="headerlink" title="四、字符串常用方法"></a>四、字符串常用方法</h1><ul>
+<li><p>字符串的内容比较：</p>
+<ol>
+<li><p>public boolean equals(Object obj):参数可以是任何对象，任何对象都能够用object接收。只有参数是一个字符串并且内容相同的才会返回true，否则返回false。</p>
+<p>注意事项：</p>
+<pre><code>1. 任何对象都能用Object进行接收。
+ 2. equals方法具有对称性，a.equals(b) 与 b.equals(a)效果相同。
+ 3. 推荐使用“abc”.equals(str);即推荐将常量字符串写在前面。</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"Hello"</span>;</span><br><span class="line">Stinrg str2 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">char</span>[] charArray = &#123;<span class="string">'H'</span>,<span class="string">'e'</span>,<span class="string">'l'</span>,<span class="string">'l'</span>,<span class="string">'o'</span>&#125;;</span><br><span class="line">String str3 = <span class="keyword">new</span> String(cahrArray);</span><br><span class="line"></span><br><span class="line">System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br><span class="line">System.out.println(str2.equals(str3));<span class="comment">//true</span></span><br><span class="line">System.out.println(str3.equals(<span class="string">"Hello"</span>));<span class="comment">//true</span></span><br><span class="line">System.out.println(<span class="string">"Hello"</span>.equals(str1));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">String str5 = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(<span class="string">"ABC"</span>.equals(str5));<span class="comment">//推荐,结果返回false</span></span><br><span class="line">System.out.println(str5.equals(<span class="string">"abc"</span>));<span class="comment">//不推荐，报错:空指针异常NullPointerException</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>public boolean equalsIgnoreCase(String str):忽略大小写进行内容比较。</li>
+</ol>
+<ul>
+<li><p>字符串获取相关的方法：</p>
+<ol>
+<li><p>public int length():获取字符串中含有额字符个数，得到字符串长度。</p>
+</li>
+<li><p>public String contact(String str):将当前字符串和参数字符串拼接成为返回值新的字符串。</p>
+</li>
+<li><p>public char cahrAt(int index):获取指定索引位置的单个字符（索引从0开始）</p>
+</li>
+<li><p>public int indexOf(String str):查找参数字符串在本字符串当中首次出现的索引位置，如果没有返回-1.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> length = <span class="string">"adafasdfasdf"</span>.length();</span><br><span class="line"></span><br><span class="line"><span class="comment">//拼接字符串</span></span><br><span class="line">String str1 = <span class="string">"Hello"</span>;</span><br><span class="line">String str2 = <span class="string">"World"</span>;</span><br><span class="line">String str3 = str1.contact(str2);<span class="comment">//HelloWorld,返回新的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取指定索引位置的单个字符</span></span><br><span class="line"><span class="keyword">char</span> ch = <span class="string">"Hello"</span>.charAt(<span class="number">1</span>);<span class="comment">//e</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找参数字符串在本来字符串当中出现的第一次索引位置</span></span><br><span class="line"><span class="comment">//如果没有，返回-1</span></span><br><span class="line">String original = <span class="string">"HelloWorld"</span>;</span><br><span class="line"><span class="keyword">int</span> index = original.indexOf(<span class="string">"llo"</span>);<span class="comment">//2</span></span><br><span class="line">String original = <span class="string">"HelloWorldHelloWorld"</span>;</span><br><span class="line"><span class="keyword">int</span> index = original.indexOf(<span class="string">"llo"</span>);<span class="comment">//2,只看第一次</span></span><br><span class="line">String original = <span class="string">"HelloWorld"</span>;</span><br><span class="line"><span class="keyword">int</span> index = original.indexOf(<span class="string">"abc"</span>);<span class="comment">//-1，没找着</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>字符串当中的截取方法：</p>
+<ol>
+<li><p>public String substring(int index):截取从参数位置一直到字符串末尾，作为新字符串返回</p>
+</li>
+<li><p>public String substring(int begin,int end):截取从begin开始，一直到end结束的中间字符串</p>
+<p>[begin,end),左闭半开区间，截取不到end位置的字符。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"HelloWorld"</span>;</span><br><span class="line">String str2 = str1.substring(<span class="number">5</span>);<span class="comment">//World</span></span><br><span class="line"></span><br><span class="line">String str3 = str1.substring(<span class="number">4</span>,<span class="number">7</span>);<span class="comment">//index = 7 为r,但是取不到7，因此为oWo。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下面这种写法不代表字符串内容改变</span></span><br><span class="line"><span class="comment">//下面有两个字符串"Hello","Java"</span></span><br><span class="line"><span class="comment">//strA中仅保存字符串的地址值，因此改变的是地址值，而不是字符串内容直接发生改变</span></span><br><span class="line">String strA = <span class="string">"Hello"</span>;<span class="comment">//Hello</span></span><br><span class="line">strA= <span class="string">"Java"</span>;<span class="comment">//Java</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>字符串的转换方法：</p>
+<ol>
+<li><p>public  char[] toCharArray()：将当前字符串拆分成为字符数组作为返回值</p>
+</li>
+<li><p>public byte[] getBytes:获得当前字符串底层的字节数组</p>
+</li>
+<li><p>public String replace(CharSequence oldString,CharSequence newString):</p>
+<p>将所有出现的老字符串替换成为新的字符串，返回替换之后的结果给新字符串。</p>
+<p>CharSequence可以接收字符串数组。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转换成为字符数组</span></span><br><span class="line"><span class="keyword">char</span>[] chars = <span class="string">"Hello"</span>.tocharArray();</span><br><span class="line">System.out.println(chars[<span class="number">0</span>]);<span class="comment">//H</span></span><br><span class="line">System.out.println(chars.length);<span class="comment">//5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//转换成为字节数组</span></span><br><span class="line"><span class="keyword">byte</span>[] bytes = <span class="string">"abc"</span>.getBytes();</span><br><span class="line">System.out.println(bytes[<span class="number">0</span>]);<span class="comment">//97</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串的内容替换</span></span><br><span class="line">String str1 = <span class="string">"How do you do?"</span>;</span><br><span class="line">String str2 = str1.replace(<span class="string">"o"</span>,<span class="string">"*"</span>);<span class="comment">//H*w d* y*u d*?</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>字符串的分割方法：</p>
+<ol>
+<li><p>public String[] split(String regex):按照参数的规则，将字符串切割成若干部分</p>
+<p>split方法的参数其实是一个正则表达式，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"aaa,bbb,ccc,d"</span>;</span><br><span class="line">String[] array1 = str1.split(<span class="string">","</span>);</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; array1.length; i++)&#123;</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">&#125;<span class="comment">//输出 aaa bbb  cccc</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">String str2 = <span class="string">"aaa.bbb.ccc"</span>;</span><br><span class="line">String[] array2 = str1.split(<span class="string">"."</span>);<span class="comment">//切割不成功，需要转义为\\.</span></span><br><span class="line"></span><br><span class="line">str2 += <span class="string">"haha"</span>;<span class="comment">//对于string来说，+=是直接拼接。</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+</li>
+</ul>
 
       
     </div>
@@ -398,6 +469,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/18/java学习-static关键字/" rel="prev" title="java学习--static关键字">
+                java学习--static关键字 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -474,7 +549,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -520,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、字符串概述及特点"><span class="nav-number">1.</span> <span class="nav-text">一、字符串概述及特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、创建字符串"><span class="nav-number">2.</span> <span class="nav-text">二、创建字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、字符串的常量池"><span class="nav-number">3.</span> <span class="nav-text">三、字符串的常量池</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、字符串概述及特点"><span class="nav-number">1.</span> <span class="nav-text">一、字符串概述及特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、创建字符串"><span class="nav-number">2.</span> <span class="nav-text">二、创建字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、字符串的常量池"><span class="nav-number">3.</span> <span class="nav-text">三、字符串的常量池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、字符串常用方法"><span class="nav-number">4.</span> <span class="nav-text">四、字符串常用方法</span></a></li></ol></div>
             
 
           </div>
