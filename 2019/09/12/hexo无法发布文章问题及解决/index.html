@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="每次hexo d -g都发布不出去文章 查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
+<meta name="description" content="一、每次hexo d -g都发布不出去文章查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo无法发布文章问题及解决">
+<meta property="og:title" content="hexo问题集合">
 <meta property="og:url" content="http://yoursite.com/2019/09/12/hexo无法发布文章问题及解决/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="每次hexo d -g都发布不出去文章 查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
+<meta property="og:description" content="一、每次hexo d -g都发布不出去文章查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-15T05:39:41.188Z">
+<meta property="og:updated_time" content="2019-09-23T03:29:03.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo无法发布文章问题及解决">
-<meta name="twitter:description" content="每次hexo d -g都发布不出去文章 查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
+<meta name="twitter:title" content="hexo问题集合">
+<meta name="twitter:description" content="一、每次hexo d -g都发布不出去文章查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>hexo无法发布文章问题及解决 | Hexo</title>
+  <title>hexo问题集合 | Hexo</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo无法发布文章问题及解决</h1>
+          <h1 class="post-title" itemprop="name headline">hexo问题集合</h1>
         
 
         <div class="post-meta">
@@ -321,13 +321,18 @@
       
 
       
-        <p>每次hexo d -g都发布不出去文章</p>
-<p>查看发现错误提示为：</p>
+        <h2 id="一、每次hexo-d-g都发布不出去文章"><a href="#一、每次hexo-d-g都发布不出去文章" class="headerlink" title="一、每次hexo d -g都发布不出去文章"></a>一、每次hexo d -g都发布不出去文章</h2><p>查看发现错误提示为：</p>
 <p>ERROR Process failed: tags/index.md<br>YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:</p>
 <a id="more"></a>
 
 <p>修改后发现问题是在tags后面没有留有空格：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: vue项目搭建笔记</span><br><span class="line">date: 2018-07-03 16:15:30</span><br><span class="line">tags: </span><br><span class="line">photos: /2018/07/03/vue项目搭建笔记/5aa8db481d851.png</span><br><span class="line">categories:</span><br><span class="line">- hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、图片无法显示"><a href="#二、图片无法显示" class="headerlink" title="二、图片无法显示"></a>二、图片无法显示</h2><p>将引用图片的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[!...](xxx/图片名.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 图片名.jpg 图片说明文字%&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -417,8 +422,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -469,6 +483,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、每次hexo-d-g都发布不出去文章"><span class="nav-number">1.</span> <span class="nav-text">一、每次hexo d -g都发布不出去文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、图片无法显示"><span class="nav-number">2.</span> <span class="nav-text">二、图片无法显示</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
