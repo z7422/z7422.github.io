@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%5C1568552369254.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%5C1568552891254.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/15/java学习-类与对象/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%5C1568553226603.png">
-<meta property="og:updated_time" content="2019-09-23T03:11:13.313Z">
+<meta property="og:updated_time" content="2019-09-23T03:13:45.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--类与对象">
 <meta name="twitter:description" content="一、 面向对象思想 面向过程：当需要实现一个功能时，每一个具体的步骤都要亲历亲为，详细处理每一个细节。  面向对象：当需要实现一个功能时，不关心具体的步骤，而是寻找一个具有该功能的工具来实现。">
@@ -371,10 +371,7 @@
 <p>​        如图所示，在程序运行前将class信息存入方法区，从main方法开始执行。创建Phone的对象one时，new Phone()的信息放入堆内存中，包含成员变量及成员方法；成员变量存储默认值直接存放在堆中；成员方法存储的是方法的内存地址值，指向方法区中类的成员方法。对象one在栈中存放的一个内存地址值，指向堆内存。</p>
 <p>​        使用one.brand=“苹果”等语句向成员变量赋值，是通过栈中one指向的地址访问堆内存中的成员变量，对其赋值。使用one.call(“乔布斯”)语句，有两个步骤，首先通过栈内存中的值访问堆内存，再通过堆中的地址访问方法区中的方法；call方法运行时需要进栈（压栈），将参数传递并进行方法调用，调用结束call方法出栈。继续进行one.sendMessage()方法，使之进栈并调用方法，随后出栈。main方法结束，同样出栈，程序停止。</p>
 <p>​        <strong>Tips</strong>：<strong>对象调用方法时，根据对象中方法标记（地址值），去类中寻找方法信息。这样哪怕是多个对象，方法信息 只保存一份，节约内存空间</strong></p>
-<h1 id="五、两个对象使用同一个方法的内存图"><a href="#五、两个对象使用同一个方法的内存图" class="headerlink" title="五、两个对象使用同一个方法的内存图"></a>五、两个对象使用同一个方法的内存图</h1><img src="/2019/09/15/java学习-类与对象/1568552062582.png" title="This is an example image">
-
-
-
+<h1 id="五、两个对象使用同一个方法的内存图"><a href="#五、两个对象使用同一个方法的内存图" class="headerlink" title="五、两个对象使用同一个方法的内存图"></a>五、两个对象使用同一个方法的内存图</h1><p><img src="//yoursite.com/2019/09/15/java学习-类与对象/1568552062582.png" alt="1568552062582"></p>
 <p>​        程序运行时的步骤同上，只不过在调用两个对象的成员方法时，最终都访问了方法区类中的成员方法。</p>
 <h1 id="六、两个引用指向同一个对象的内存图"><a href="#六、两个引用指向同一个对象的内存图" class="headerlink" title="六、两个引用指向同一个对象的内存图"></a>六、两个引用指向同一个对象的内存图</h1><p><img src="//yoursite.com/2019/09/15/java学习-类与对象/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%5C1568552369254.png" alt="1568552369254"></p>
 <p>两个引用名指向同一个对象空间。</p>
