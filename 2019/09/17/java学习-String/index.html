@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、字符串概述及特点 java.lang.String类代表字符串 java程序中所有字符串字面值都作为此类的实例实现，即程序中所有含双引号的字符串都被视为String类的对象。（就算没有new也是） 特点： 字符串的内容永远不可改变，是一个常量。 正是因为字符串不可改变，所以字符串是可以共享使用的。（内容相同时不用重复创建） 字符串在效果上相当与char[]字符数组，但是底层原理是byte[]字">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/09/17/java学习-String/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-String%5C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0.png">
-<meta property="og:updated_time" content="2019-09-18T11:40:44.475Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/17/java学习-String/字符串常量池.png">
+<meta property="og:updated_time" content="2019-09-23T03:22:16.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--String">
 <meta name="twitter:description" content="一、字符串概述及特点 java.lang.String类代表字符串 java程序中所有字符串字面值都作为此类的实例实现，即程序中所有含双引号的字符串都被视为String类的对象。（就算没有new也是） 特点： 字符串的内容永远不可改变，是一个常量。 正是因为字符串不可改变，所以字符串是可以共享使用的。（内容相同时不用重复创建） 字符串在效果上相当与char[]字符数组，但是底层原理是byte[]字">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/17/java学习-String/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-String%5C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/17/java学习-String/字符串常量池.png">
 
 
 
@@ -360,7 +360,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abc"</span>;</span><br><span class="line">String str2 = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>[] charArray = &#123;<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>&#125;;</span><br><span class="line">String str3 = <span class="keyword">new</span> String&#123;charArray&#125;;<span class="comment">//str1,str2,str3输出结果相同:abc</span></span><br><span class="line"></span><br><span class="line">System.out.prinln(str1 == str2);<span class="comment">//true，代表str1与str2拥有相同的地址值</span></span><br><span class="line">System.out.prinln(str2 == str2);<span class="comment">//false</span></span><br><span class="line">System.out.prinln(str3 == str2);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>堆中存在一个字符串常量池，内存图如下：</p>
-<p><img src="//yoursite.com/2019/09/17/java学习-String/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-String%5C%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0.png" alt="字符串常量池"></p>
+<img src="/2019/09/17/java学习-String/字符串常量池.png">
+
+
+
 </li>
 </ul>
 </li>
@@ -431,12 +434,11 @@
 <p>split方法的参数其实是一个正则表达式，</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"aaa,bbb,ccc,d"</span>;</span><br><span class="line">String[] array1 = str1.split(<span class="string">","</span>);</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; array1.length; i++)&#123;</span><br><span class="line">    System.out.println(array[i]);</span><br><span class="line">&#125;<span class="comment">//输出 aaa bbb  cccc</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">String str2 = <span class="string">"aaa.bbb.ccc"</span>;</span><br><span class="line">String[] array2 = str1.split(<span class="string">"."</span>);<span class="comment">//切割不成功，需要转义为\\.</span></span><br><span class="line"></span><br><span class="line">str2 += <span class="string">"haha"</span>;<span class="comment">//对于string来说，+=是直接拼接。</span></span><br></pre></td></tr></table></figure>
 
-
 </li>
 </ol>
 </li>
 </ul>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
       
     </div>
     

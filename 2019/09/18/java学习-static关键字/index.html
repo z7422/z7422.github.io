@@ -86,12 +86,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、static静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   二、静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。 123456789101112131415">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/09/18/java学习-static关键字/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-static%E5%85%B3%E9%94%AE%E5%AD%97%5C%E5%86%85%E5%AD%98%E5%9B%BEstatic.png">
-<meta property="og:updated_time" content="2019-09-18T13:32:10.078Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/18/java学习-static关键字/内存图static.png">
+<meta property="og:updated_time" content="2019-09-23T03:21:48.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--static关键字">
 <meta name="twitter:description" content="一、static静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   二、静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。 123456789101112131415">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/18/java学习-static关键字/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-static%E5%85%B3%E9%94%AE%E5%AD%97%5C%E5%86%85%E5%AD%98%E5%9B%BEstatic.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/18/java学习-static关键字/内存图static.png">
 
 
 
@@ -354,9 +354,10 @@
 <li><p>方法区中有一块独立的空间叫做<strong>静态区</strong>，存储静态相关的东西。</p>
 </li>
 <li><p>根据类名称访问静态成员变量，全程与对象无关，只与类有关。</p>
+<img src="/2019/09/18/java学习-static关键字/内存图static.png">
+
 </li>
 </ul>
-<p><img src="//yoursite.com/2019/09/18/java学习-static关键字/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-static%E5%85%B3%E9%94%AE%E5%AD%97%5C%E5%86%85%E5%AD%98%E5%9B%BEstatic.png" alt></p>
 <h1 id="五、静态代码块"><a href="#五、静态代码块" class="headerlink" title="五、静态代码块"></a>五、静态代码块</h1><ul>
 <li><p><strong>格式</strong>：</p>
 <p>public class 类名称{</p>

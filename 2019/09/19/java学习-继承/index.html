@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一、继承的概述 面向对象的三大特征：封装性、继承性、多态性。   继承是多态的前提，如果没有继承，就没有多态。  继承主要解决的问题是：共性抽取。  父类：被继承的类，也叫做基类、超类。  子类：继承的类，也可以叫做派生类。  继承关系当中的特点：  子类可以拥有父类的“内容”； 子类还可以拥有自己专有的内容。    二、继承的格式 在继承的关系中，子类就是一个父类。也就是说，子类可以被当作父类看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5Csuper%E5%92%8Cthis.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5C%E4%B8%89%E4%B8%AA%E7%89%B9%E7%82%B9.png">
-<meta property="og:updated_time" content="2019-09-22T02:38:02.717Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/java学习-继承/面向对象三大特征.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/java学习-继承/super和this.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/java学习-继承/三个特点.png">
+<meta property="og:updated_time" content="2019-09-23T03:23:25.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--继承">
 <meta name="twitter:description" content="一、继承的概述 面向对象的三大特征：封装性、继承性、多态性。   继承是多态的前提，如果没有继承，就没有多态。  继承主要解决的问题是：共性抽取。  父类：被继承的类，也叫做基类、超类。  子类：继承的类，也可以叫做派生类。  继承关系当中的特点：  子类可以拥有父类的“内容”； 子类还可以拥有自己专有的内容。    二、继承的格式 在继承的关系中，子类就是一个父类。也就是说，子类可以被当作父类看">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/19/java学习-继承/面向对象三大特征.jpg">
 
 
 
@@ -327,7 +327,7 @@
       
         <h1 id="一、继承的概述"><a href="#一、继承的概述" class="headerlink" title="一、继承的概述"></a>一、继承的概述</h1><ul>
 <li><p>面向对象的三大特征：封装性、继承性、多态性。</p>
-<p><img src="//yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81.jpg" alt="//此处应该有张图"></p>
+<img src="/2019/09/19/java学习-继承/面向对象三大特征.jpg">
 </li>
 <li><p>继承是多态的<strong>前提</strong>，如果没有继承，就没有多态。</p>
 </li>
@@ -456,7 +456,10 @@
 
 <p>方法区中Zi.class中有一个特殊标记，指向父类。</p>
 <p>而在堆内存区内，new出来的子类中同时含有子类内容和父类内容。</p>
-<p><img src="//yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5Csuper%E5%92%8Cthis.png" alt="这是一个图片"></p>
+<img src="/2019/09/19/java学习-继承/super和this.png">
+
+
+
 <h1 id="十、java继承的三个特点"><a href="#十、java继承的三个特点" class="headerlink" title="十、java继承的三个特点"></a>十、java继承的三个特点</h1><ol>
 <li><p>java语言是<strong>单继承</strong>的：一个类的<u>直接父类</u>只能有一个。</p>
 </li>
@@ -464,9 +467,12 @@
 <p>java.lang.Object是所有类的父类。</p>
 </li>
 <li><p>一个子类的直接父类是唯一的，但是一个父类可以有<strong>多个子类</strong>。</p>
+<img src="/2019/09/19/java学习-继承/三个特点.png">
+
+
+
 </li>
 </ol>
-<p><img src="//yoursite.com/2019/09/19/java学习-继承/D:%5Cgithub%5ChexoBlog%5Csource_posts%5Cjava%E5%AD%A6%E4%B9%A0-%E7%BB%A7%E6%89%BF%5C%E4%B8%89%E4%B8%AA%E7%89%B9%E7%82%B9.png" alt="这也是一个图片"></p>
 
       
     </div>
