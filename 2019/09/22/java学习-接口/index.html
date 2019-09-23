@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="接口一、定义及格式 接口是一种引用数据类型，最重要的内容就是其中的抽象方法。 定义格式： public interface 接口名称{//接口内容} tips：换成了关键字interface之后，编译生成的字节码仍然是：.java–&amp;gt;.class。   接口包含的内容(java7): 常量 抽象方法 默认方法(java8追加) 静态方法(java8追加) 私有方法(java9追加)    二">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java学习--接口">
 <meta property="og:url" content="http://yoursite.com/2019/09/22/java学习-接口/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="接口一、定义及格式 接口是一种引用数据类型，最重要的内容就是其中的抽象方法。 定义格式： public interface 接口名称{//接口内容} tips：换成了关键字interface之后，编译生成的字节码仍然是：.java–&amp;gt;.class。   接口包含的内容(java7): 常量 抽象方法 默认方法(java8追加) 静态方法(java8追加) 私有方法(java9追加)    二">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-22T03:37:17.683Z">
+<meta property="og:updated_time" content="2019-09-22T08:14:10.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--接口">
+<meta name="twitter:description" content="接口一、定义及格式 接口是一种引用数据类型，最重要的内容就是其中的抽象方法。 定义格式： public interface 接口名称{//接口内容} tips：换成了关键字interface之后，编译生成的字节码仍然是：.java–&amp;gt;.class。   接口包含的内容(java7): 常量 抽象方法 默认方法(java8追加) 静态方法(java8追加) 私有方法(java9追加)    二">
 
 
 
@@ -269,6 +272,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -296,7 +321,72 @@
       
 
       
-        
+        <h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><h2 id="一、定义及格式"><a href="#一、定义及格式" class="headerlink" title="一、定义及格式"></a>一、定义及格式</h2><ul>
+<li><strong>接口</strong>是一种<strong>引用数据类型</strong>，最重要的内容就是其中的抽象方法。</li>
+<li><strong>定义格式</strong>：<ul>
+<li>public interface 接口名称{//接口内容}</li>
+<li>tips：换成了关键字interface之后，编译生成的字节码仍然是：.java–&gt;.class。</li>
+</ul>
+</li>
+<li><strong>接口包含的内容</strong>(java7):<ul>
+<li>常量</li>
+<li>抽象方法</li>
+<li>默认方法(java8追加)</li>
+<li>静态方法(java8追加)</li>
+<li>私有方法(java9追加)</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、接口当中的抽象方法"><a href="#二、接口当中的抽象方法" class="headerlink" title="二、接口当中的抽象方法"></a>二、接口当中的抽象方法</h2><ul>
+<li><p>在任何版本的java中，接口都能定义抽象方法：</p>
+<p>​    public abstract 返回值类型 方法名称(参数列表)；</p>
+</li>
+<li><p>接口当中的抽象方法，修饰符必须时固定的关键字：public abstract</p>
+</li>
+<li><p>这两个关键字修饰符，可以选择性地省略。</p>
+</li>
+<li><p><strong>接口使用步骤</strong>：</p>
+<ul>
+<li><p>1.接口不能直接使用，必须有一个实现类来实现该接口。</p>
+<p>格式：public class 实现类名称 implements 接口名称{</p>
+<p>//…</p>
+<p>}</p>
+</li>
+<li><p>2.接口的实现类必须覆盖重写接口中所有的抽象方法。</p>
+</li>
+<li><p>3.创建实现类的对象，进行使用。</p>
+</li>
+<li><p>注意事项：如果实现类也时抽象类，那么可以不全部覆盖重写接口中的所有抽象方法。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceAbstract</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这是一个抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodAbs1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//这也是抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodAbs2</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//这也是抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs3</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//这还是抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">methodAbs4</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceAbstractImpl</span> <span class="keyword">implements</span> <span class="title">MyInterfaceAbstract</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是第一个方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是第二个方法"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是第三个方法"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是第四个方法"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01Interface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//MyInterfaceAbstract inter = new MyInterfaceAbstract();//错误写法</span></span><br><span class="line">        MyInterfaceAbstractImpl impl = <span class="keyword">new</span> MyInterfaceAbstractImpl();</span><br><span class="line">        impl.methodAbs1();<span class="comment">//这是第一个方法</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ul>
+<h2 id="三、接口中的默认方法"><a href="#三、接口中的默认方法" class="headerlink" title="三、接口中的默认方法"></a>三、接口中的默认方法</h2><ul>
+<li><p>从Java8开始，接口里允许定义默认方法。</p>
+</li>
+<li><p><strong>格式</strong>：</p>
+<ul>
+<li>public default 返回值类型 方法名称（参数列表）{方法体}</li>
+</ul>
+</li>
+<li><p><strong>目的</strong>：默认方法可以解决接口升级的问题，不改动之前已经投入使用的实现类（抽象方法必须全部实现，默认方法不用全部实现）。</p>
+</li>
+<li><p>注意事项：</p>
+<ol>
+<li>接口的默认方法，可以不经过覆盖重写通过接口实现类对象直接调用。</li>
+<li>接口的默认方法，也可以被接口实现类进行覆盖重写。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterfaceDefault</span> </span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//新添加了一个抽象方法，已经投入使用的AB就会因为没有实现这个抽象方法而报错</span></span><br><span class="line">    <span class="comment">//public abstract void methodAbs2();</span></span><br><span class="line">    <span class="comment">//抽象方法--&gt;改为默认方法，A，B就不会出错</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"这是新添加的默认方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceDefaultA</span>  <span class="keyword">implements</span> <span class="title">MyInterfaceDefault</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"实现了抽象方法AAA"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterfaceDefaultB</span> <span class="keyword">implements</span> <span class="title">MyInterfaceDefault</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodAbs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"实现了抽象方法BBB"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodDefault</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"覆盖重写了默认方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02InterfaceDefault</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建了实现类对象A</span></span><br><span class="line">        MyInterfaceDefaultA a = <span class="keyword">new</span> MyInterfaceDefaultA();</span><br><span class="line">        a.methodAbs();<span class="comment">//抽象方法AAA</span></span><br><span class="line">        <span class="comment">//调用默认方法，如果实现类内没找到，就会向上查找</span></span><br><span class="line">        a.methodDefault();<span class="comment">//这是新添加的默认方法，没有覆盖重写</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建了实现类对象B</span></span><br><span class="line">        MyInterfaceDefaultB b = <span class="keyword">new</span> MyInterfaceDefaultB();</span><br><span class="line">        b.methodAbs();<span class="comment">//抽象方法AAA</span></span><br><span class="line">        b.methodDefault();<span class="comment">//B覆盖重写了默认方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
       
     </div>
     
@@ -380,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -432,6 +531,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">1.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、定义及格式"><span class="nav-number">1.1.</span> <span class="nav-text">一、定义及格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、接口当中的抽象方法"><span class="nav-number">1.2.</span> <span class="nav-text">二、接口当中的抽象方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、接口中的默认方法"><span class="nav-number">1.3.</span> <span class="nav-text">三、接口中的默认方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
