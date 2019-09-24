@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="一、每次hexo d -g都发布不出去文章查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
+<meta name="description" content="JVM jvm是一个抽象的计算机，和实际的计算机一样，它具有指令集并使用不同的存储区域。它负责执行指令，还要管理数据、内存和寄存器。  java程序的运行机制 由java语言编写的程序需要经过编译，但生成的不是特定平台的机器语言，而是一种与平台无关的字节码文件，即.class文件。这种字节码不是可执行性的，需要用java解释器来解释执行。  java程序的执行过程：  java源文件 –使用jav">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo问题集合">
-<meta property="og:url" content="http://yoursite.com/2019/09/12/hexo无法发布文章问题及解决/index.html">
+<meta property="og:title" content="java学习--JVM">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/java学习-JVM/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、每次hexo d -g都发布不出去文章查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
+<meta property="og:description" content="JVM jvm是一个抽象的计算机，和实际的计算机一样，它具有指令集并使用不同的存储区域。它负责执行指令，还要管理数据、内存和寄存器。  java程序的运行机制 由java语言编写的程序需要经过编译，但生成的不是特定平台的机器语言，而是一种与平台无关的字节码文件，即.class文件。这种字节码不是可执行性的，需要用java解释器来解释执行。  java程序的执行过程：  java源文件 –使用jav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-23T03:29:03.092Z">
+<meta property="og:updated_time" content="2019-09-24T09:25:20.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo问题集合">
-<meta name="twitter:description" content="一、每次hexo d -g都发布不出去文章查看发现错误提示为： ERROR Process failed: tags/index.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:">
+<meta name="twitter:title" content="java学习--JVM">
+<meta name="twitter:description" content="JVM jvm是一个抽象的计算机，和实际的计算机一样，它具有指令集并使用不同的存储区域。它负责执行指令，还要管理数据、内存和寄存器。  java程序的运行机制 由java语言编写的程序需要经过编译，但生成的不是特定平台的机器语言，而是一种与平台无关的字节码文件，即.class文件。这种字节码不是可执行性的，需要用java解释器来解释执行。  java程序的执行过程：  java源文件 –使用jav">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/12/hexo无法发布文章问题及解决/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/24/java学习-JVM/">
 
 
 
 
 
-  <title>hexo问题集合 | Hexo</title>
+  <title>java学习--JVM | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/12/hexo无法发布文章问题及解决/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/java学习-JVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Z7422">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo问题集合</h1>
+          <h1 class="post-title" itemprop="name headline">java学习--JVM</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-12T18:10:41+08:00">
-                2019-09-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T09:09:34+08:00">
+                2019-09-24
               </time>
             
 
@@ -284,8 +284,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Java学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
                   </a>
                 </span>
 
@@ -321,19 +321,39 @@
       
 
       
-        <h2 id="一、每次hexo-d-g都发布不出去文章"><a href="#一、每次hexo-d-g都发布不出去文章" class="headerlink" title="一、每次hexo d -g都发布不出去文章"></a>一、每次hexo d -g都发布不出去文章</h2><p>查看发现错误提示为：</p>
-<p>ERROR Process failed: tags/index.md<br>YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:</p>
-<a id="more"></a>
-
-<p>修改后发现问题是在tags后面没有留有空格：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: vue项目搭建笔记</span><br><span class="line">date: 2018-07-03 16:15:30</span><br><span class="line">tags: </span><br><span class="line">photos: /2018/07/03/vue项目搭建笔记/5aa8db481d851.png</span><br><span class="line">categories:</span><br><span class="line">- hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、图片无法显示"><a href="#二、图片无法显示" class="headerlink" title="二、图片无法显示"></a>二、图片无法显示</h2><p>将引用图片的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[!...](xxx/图片名.jpg)</span><br></pre></td></tr></table></figure>
-
-<p>改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 图片名.jpg 图片说明文字%&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><ul>
+<li>jvm是一个抽象的计算机，和实际的计算机一样，它具有指令集并使用不同的存储区域。它负责执行指令，还要管理数据、内存和寄存器。</li>
+</ul>
+<h2 id="java程序的运行机制"><a href="#java程序的运行机制" class="headerlink" title="java程序的运行机制"></a>java程序的运行机制</h2><ul>
+<li><p>由java语言编写的程序需要经过编译，但生成的不是特定平台的机器语言，而是一种与平台无关的字节码文件，即.class文件。这种字节码不是可执行性的，需要用java解释器来解释执行。</p>
+</li>
+<li><p>java程序的执行过程：</p>
+<ul>
+<li>java源文件 –使用javac编译–&gt; .class文件(字节码文件) –使用java解释执行–&gt; 特定平台的机器语言</li>
+</ul>
+</li>
+<li><p>作用：JVM类似一个位于java字节码程序与平台之间的中间件。对于java字节码程序提供统一的接口，而对于不同平台提供不同的接口，以此达到java程序的可移植性。</p>
+</li>
+</ul>
+<h2 id="编译-amp-amp-解释"><a href="#编译-amp-amp-解释" class="headerlink" title="编译&amp;&amp;解释"></a>编译&amp;&amp;解释</h2><ul>
+<li><p><strong>编译</strong>：程序在执行之前需要一个专门的编译过程，把程序编译成为机器语言的文件，运行时不需要重新翻译，直接使用编译的结果就行了。程序执行效率高，依赖编译器，跨平台性差些。</p>
+<ul>
+<li><p>有哪些编译型语言：<br>C/C++、Pascal/Object Pascal（Delphi）、Golang<br>典型的就是它们可以编译后生成.exe文件，之后无需再次<br>编译，直接运行.exe文件即可。</p>
+</li>
+<li><p>以C语言为例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"helloword"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//安装mingw-get-setup.exe安装gcc和g++，C语言用gcc命令来编译</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>解释：程序不需要编译，程序在运行时才翻译成机器语言，每执行 一次都要翻译一次。因此效率比较低。在运行程序的时候才翻译，专门有 一个解释器去进行翻译，每个语句都是执行的时候才翻译。效率比较低，依赖解释器，跨平台性好.</p>
+<ul>
+<li>有哪些解释型语言：Java、C#、PHP、JavaScript、VBScript、<br>Perl、Python、Ruby、MATLAB 等等</li>
+</ul>
+<h1 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a>JRE</h1><p>Java Runtime Environment，即java运行环境。<strong>JRE包括JVM</strong>。JVM时java程序运行的核心虚拟机，但是运行java程序不仅需要核心虚拟机，还需要其他的类加载器、字节码校验器以及大量的基础类库。JRE除了包含JVM之外，也包含了运行Java程序的其他环江支持。</p>
+<h1 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h1><p>Java SE Development Kit，即Java标准开发包，Sun提供的一套用于开发Java应用程序的开发包，它提供了编译、运行Java程序所需要的各种工具和资源。包括Java编译器<strong>、Java运行时环境（JRE</strong>）及常用的Java类库等。</p>
+<p>## </p>
+</li>
+</ul>
 
       
     </div>
@@ -358,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/12/java学习--内存划分/" rel="next" title="java学习--内存划分">
-                <i class="fa fa-chevron-left"></i> java学习--内存划分
+              <a href="/2019/09/22/java学习-接口/" rel="next" title="java学习--接口">
+                <i class="fa fa-chevron-left"></i> java学习--接口
               </a>
             
           </div>
@@ -368,8 +388,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/15/java学习-类与对象/" rel="prev" title="java学习--类与对象">
-                java学习--类与对象 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/24/2019-09-12-java学习--内存划分/" rel="prev" title="java学习--内存划分">
+                java学习--内存划分 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、每次hexo-d-g都发布不出去文章"><span class="nav-number">1.</span> <span class="nav-text">一、每次hexo d -g都发布不出去文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、图片无法显示"><span class="nav-number">2.</span> <span class="nav-text">二、图片无法显示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM"><span class="nav-number">1.</span> <span class="nav-text">JVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java程序的运行机制"><span class="nav-number">1.1.</span> <span class="nav-text">java程序的运行机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译-amp-amp-解释"><span class="nav-number">1.2.</span> <span class="nav-text">编译&amp;&amp;解释</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JRE"><span class="nav-number">2.</span> <span class="nav-text">JRE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK"><span class="nav-number">3.</span> <span class="nav-text">JDK</span></a></li></ol></div>
             
 
           </div>

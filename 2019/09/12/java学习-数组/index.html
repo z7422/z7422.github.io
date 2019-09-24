@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/12/java学习-数组/1568534028051.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/12/java学习-数组/1568534403207.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/12/java学习-数组/1568535685912.png">
-<meta property="og:updated_time" content="2019-09-23T03:20:24.836Z">
+<meta property="og:updated_time" content="2019-09-24T09:27:47.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--数组">
 <meta name="twitter:description" content="一、数组的定义 定义：数组是一种容器，可以同时存放多个数据值  特点：  数组是一种引用数据类型。 数组当中的多个数据，类型必须统一。 数组的长度在程序运行期间不可改变。">
@@ -453,34 +453,17 @@
 <p>数组作为方法的参数或返回值，传递的本质上都是数组的地址值。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] calculate(<span class="keyword">int</span> a ,<span class="keyword">int</span> b,<span class="keyword">int</span> c)&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = a+b+c;</span><br><span class="line">    <span class="keyword">int</span> avg = sum/<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    array[<span class="number">0</span>]=sum;</span><br><span class="line">    array[<span class="number">1</span>]=avg;</span><br><span class="line">    <span class="comment">//int []array = &#123;sum , avg&#125;; 也可以使用这种形式</span></span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="九、Java内存划分"><a href="#九、Java内存划分" class="headerlink" title="九、Java内存划分"></a>九、Java内存划分</h1><p><strong>java内存需要划分成5个部分</strong>：</p>
-<ol>
-<li><p><strong>栈</strong>（stack）：存放的都是方法中的局部变量。<strong>方法的运行在栈中。</strong></p>
-<p>​    局部变量：方法的参数，或者是方法内部的变量。</p>
-<p>​    作用域：一旦超出作用域，立刻从栈内存中消失。</p>
-</li>
-<li><p><strong>堆</strong>（heap）：凡是new出来的东西，都在堆中。</p>
-<p>​    堆内存中的东西都有一个16进制的地址值。</p>
-<p>​    堆内存中的数据都具有默认值。</p>
-</li>
-<li><p><strong>方法区</strong>（Method Area）：存储.class相关的信息，包含方法的信息。</p>
-</li>
-<li><p><strong>本地方法栈</strong>（Native Method Stack）：与操作系统相关。</p>
-</li>
-<li><p><strong>寄存器</strong>（PC Register）：与CPU相关。</p>
-</li>
-</ol>
-<h1 id="十、一个数组的内存图"><a href="#十、一个数组的内存图" class="headerlink" title="十、一个数组的内存图"></a>十、一个数组的内存图</h1><img src="/2019/09/12/java学习-数组/1568533844087.png" title="一个数组的内存图（无方法区）">
+<h1 id="九、一个数组的内存图"><a href="#九、一个数组的内存图" class="headerlink" title="九、一个数组的内存图"></a>九、一个数组的内存图</h1><img src="/2019/09/12/java学习-数组/1568533844087.png" title="一个数组的内存图（无方法区）">
 
 <img src="/2019/09/12/java学习-数组/1568533905294.png" title="一个数组内存图">
 
-<h2 id="十一、两个数组的内存图"><a href="#十一、两个数组的内存图" class="headerlink" title="十一、两个数组的内存图"></a>十一、两个数组的内存图</h2><img src="/2019/09/12/java学习-数组/1568534028051.png" title="两个数组的内存图（无方法区）">
+<h1 id="十、两个数组的内存图"><a href="#十、两个数组的内存图" class="headerlink" title="十、两个数组的内存图"></a>十、两个数组的内存图</h1><img src="/2019/09/12/java学习-数组/1568534028051.png" title="两个数组的内存图（无方法区）">
 
 <img src="/2019/09/12/java学习-数组/1568534403207.png" title="两个数组的内存图">
 
 
 
-<h1 id="十二、两个引用指向同一个数组的内存图"><a href="#十二、两个引用指向同一个数组的内存图" class="headerlink" title="十二、两个引用指向同一个数组的内存图"></a>十二、两个引用指向同一个数组的内存图</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arrayB[] = arrayA;<span class="comment">//将arrayA数组的地址值，赋值给arrayB</span></span><br></pre></td></tr></table></figure>
+<h1 id="十一、两个引用指向同一个数组的内存图"><a href="#十一、两个引用指向同一个数组的内存图" class="headerlink" title="十一、两个引用指向同一个数组的内存图"></a>十一、两个引用指向同一个数组的内存图</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arrayB[] = arrayA;<span class="comment">//将arrayA数组的地址值，赋值给arrayB</span></span><br></pre></td></tr></table></figure>
 
 <img src="/2019/09/12/java学习-数组/1568535685912.png" title="两个引用指向同一个数组的内存图（无方法区）">
 
@@ -520,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/12/hexo无法发布文章问题及解决/" rel="prev" title="hexo问题集合">
-                hexo问题集合 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/12/java学习--内存划分/" rel="prev" title="java学习--内存划分">
+                java学习--内存划分 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -599,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、数组的定义"><span class="nav-number">1.</span> <span class="nav-text">一、数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数组的初始化"><span class="nav-number">2.</span> <span class="nav-text">二、数组的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、数组的打印"><span class="nav-number">3.</span> <span class="nav-text">三、数组的打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、数组的常见问题"><span class="nav-number">4.</span> <span class="nav-text">四、数组的常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组索引越界异常"><span class="nav-number">4.1.</span> <span class="nav-text">1. 数组索引越界异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空指针异常"><span class="nav-number">4.2.</span> <span class="nav-text">2. 空指针异常</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、获取数组的长度"><span class="nav-number">5.</span> <span class="nav-text">五、获取数组的长度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、数组的遍历输出"><span class="nav-number">6.</span> <span class="nav-text">六、数组的遍历输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、数组作为方法参数"><span class="nav-number">7.</span> <span class="nav-text">七、数组作为方法参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、数组作为返回值"><span class="nav-number">8.</span> <span class="nav-text">八、数组作为返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、Java内存划分"><span class="nav-number">9.</span> <span class="nav-text">九、Java内存划分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、一个数组的内存图"><span class="nav-number">10.</span> <span class="nav-text">十、一个数组的内存图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#十一、两个数组的内存图"><span class="nav-number">10.1.</span> <span class="nav-text">十一、两个数组的内存图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十二、两个引用指向同一个数组的内存图"><span class="nav-number">11.</span> <span class="nav-text">十二、两个引用指向同一个数组的内存图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、数组的定义"><span class="nav-number">1.</span> <span class="nav-text">一、数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、数组的初始化"><span class="nav-number">2.</span> <span class="nav-text">二、数组的初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、数组的打印"><span class="nav-number">3.</span> <span class="nav-text">三、数组的打印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、数组的常见问题"><span class="nav-number">4.</span> <span class="nav-text">四、数组的常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组索引越界异常"><span class="nav-number">4.1.</span> <span class="nav-text">1. 数组索引越界异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-空指针异常"><span class="nav-number">4.2.</span> <span class="nav-text">2. 空指针异常</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、获取数组的长度"><span class="nav-number">5.</span> <span class="nav-text">五、获取数组的长度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、数组的遍历输出"><span class="nav-number">6.</span> <span class="nav-text">六、数组的遍历输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、数组作为方法参数"><span class="nav-number">7.</span> <span class="nav-text">七、数组作为方法参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、数组作为返回值"><span class="nav-number">8.</span> <span class="nav-text">八、数组作为返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、一个数组的内存图"><span class="nav-number">9.</span> <span class="nav-text">九、一个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、两个数组的内存图"><span class="nav-number">10.</span> <span class="nav-text">十、两个数组的内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十一、两个引用指向同一个数组的内存图"><span class="nav-number">11.</span> <span class="nav-text">十一、两个引用指向同一个数组的内存图</span></a></li></ol></div>
             
 
           </div>
