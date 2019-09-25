@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Staticstatic静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。通过任何一个对象修改该成员变量，所有对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习--权限修饰符">
+<meta property="og:url" content="http://yoursite.com/2019/09/18/java学习-权限修饰符/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Staticstatic静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。通过任何一个对象修改该成员变量，所有对象">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/09/18/java学习-权限修饰符/内存图static.png">
+<meta property="og:updated_time" content="2019-09-25T13:10:01.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java学习--权限修饰符">
+<meta name="twitter:description" content="Staticstatic静态关键字 static:只在类当中保存唯一一份数据，所有本类对象共享同一份。  一旦使用static关键字，这样的内容不再属于对象自己，而是属于类的，凡是本类的对象都共享同一份。   静态static关键字修饰成员变量 如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。通过任何一个对象修改该成员变量，所有对象">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/18/java学习-权限修饰符/内存图static.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/18/java学习-权限修饰符/">
+
+
+
+
+
+  <title>java学习--权限修饰符 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/18/java学习-权限修饰符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Z7422">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java学习--权限修饰符</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-18T20:50:06+08:00">
+                2019-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Java学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h1><h2 id="static静态关键字"><a href="#static静态关键字" class="headerlink" title="static静态关键字"></a>static静态关键字</h2><ul>
+<li><p><strong>static</strong>:只在类当中保存唯一一份数据，所有本类对象共享同一份。</p>
+</li>
+<li><p>一旦使用static关键字，这样的内容不再属于对象自己，而是<strong>属于类</strong>的，凡是本类的对象都共享同一份。</p>
+</li>
+</ul>
+<h2 id="静态static关键字修饰成员变量"><a href="#静态static关键字修饰成员变量" class="headerlink" title="静态static关键字修饰成员变量"></a>静态static关键字修饰成员变量</h2><ul>
+<li><p>如果一个成员变量使用了static关键字，那么这个变量不再属于对象自己，而是属于所在的类，多个对象共享同一份数据。通过任何一个对象修改该成员变量，所有对象中这个值都会发生改变。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id ;<span class="comment">//学号</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;<span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">static</span> String room;<span class="comment">//静态变量，大家统一用一份</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> idCounter = <span class="number">0</span>;<span class="comment">//学号计数器，每当new一的新对象就++</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = ++idCounter;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name,<span class="keyword">int</span> age,<span class="keyword">int</span> id )</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.id = ++idCounter;</span><br><span class="line">    &#125;</span><br><span class="line">    ....<span class="comment">//getter&amp;&amp;setter省略不写</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span></span>&#123;</span><br><span class="line">    Student one = <span class="keyword">new</span> Student(<span class="string">"zhangsna"</span>,<span class="number">19</span>);</span><br><span class="line">    Student two = <span class="keyword">new</span> Student(<span class="string">"lisi"</span>,<span class="number">14</span>);</span><br><span class="line">    Student.room = <span class="string">"101教室"</span>;</span><br><span class="line">    <span class="comment">//id自动生成</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="静态static关键字修饰成员方法"><a href="#静态static关键字修饰成员方法" class="headerlink" title="静态static关键字修饰成员方法"></a>静态static关键字修饰成员方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;<span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> numStatic;<span class="comment">//静态变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">"这是一个成员方法"</span>);</span><br><span class="line">        System.out.println(num);<span class="comment">//成员方法可以访问成员变量</span></span><br><span class="line">        System.out.println(numStatic);<span class="comment">//成员方法可以访问静态变量</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">methodStatic</span><span class="params">()</span></span>&#123;</span><br><span class="line">   	 	System.out.println(<span class="string">"这是一个静态方法"</span>);</span><br><span class="line">        <span class="comment">//System.out.println(num); //静态方法不能直接访问非静态</span></span><br><span class="line">        System.out.println(numStatic);<span class="comment">//静态方法可以访问静态变量</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//一旦使用static修饰成员方法就成为静态方法。</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Myclass.methodStatic();通过类名称调用静态方法</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>静态方法不属于对象，而是属于类的。</li>
+<li>如果没有static关键字，那么必须先创建对象，然后通过对象调用方法。</li>
+<li>有static关键字，即静态方法，可以通过对象名进行调用，也可以通过类名进行调用（推荐）。</li>
+<li>对于<strong>本类</strong>当中的静态方法，可以省略类名称。</li>
+<li>注意事项：<ol>
+<li>静态不能直接访问非静态。（原因：因为在内存当中是<strong>先</strong>有的静态内容，后有的非静态内容。）</li>
+<li>静态方法中不能使用this。（原因：this代表当前对象，通过谁调用的方法，谁就是当前对象。</li>
+</ol>
+</li>
+</ul>
+<h2 id="静态static的内存图"><a href="#静态static的内存图" class="headerlink" title="静态static的内存图"></a>静态static的内存图</h2><ul>
+<li><p>方法区中有一块独立的空间叫做<strong>静态区</strong>，存储静态相关的东西。</p>
+</li>
+<li><p>根据类名称访问静态成员变量，全程与对象无关，只与类有关。</p>
+<img src="/2019/09/18/java学习-权限修饰符/内存图static.png">
+
+</li>
+</ul>
+<h2 id="静态代码块"><a href="#静态代码块" class="headerlink" title="静态代码块"></a>静态代码块</h2><ul>
+<li><p><strong>格式</strong>：</p>
+<p>public class 类名称{</p>
+<p>​    static{</p>
+<pre><code>//静态代码块的内容</code></pre><p>​    }</p>
+<p>}</p>
+</li>
+<li><p><strong>特点</strong>：当第一次用到本类是，静态代码块执行<strong>唯一</strong>的一次。</p>
+</li>
+<li><p><strong>注意</strong>：静态内容总是优先于非静态内容。所以静态代码块比构造方法先执行。</p>
+</li>
+<li><p>静态代码块的典型<strong>用途</strong>：用来一次性的对静态成员变量进行赋值。</p>
+</li>
+</ul>
+<h1 id="private"><a href="#private" class="headerlink" title="private"></a>private</h1><h2 id="private关键字的作用以及使用"><a href="#private关键字的作用以及使用" class="headerlink" title="private关键字的作用以及使用"></a>private关键字的作用以及使用</h2><ul>
+<li><p><strong>问题描述</strong>：在定义person对象的年龄时，无法阻止不合理的数值被键入。</p>
+<p>​       如:年龄-20</p>
+<p>​       <strong>解决方案</strong>：用private关键字将需要保护的成员变量进行修饰。</p>
+<p>​                           一旦使用private进行修饰，那么本类当中仍可以随意访问，但是超出本类后就不能直接访问。</p>
+<p>​                            间接访问private成员变量，就是定义一对儿Getter&amp;Setter方法，提高代码安全性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"name:"</span>+name+<span class="string">",age:"</span>+age);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//这个成员方法，专门用于向age属性设置数据</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;<span class="comment">//方法名必须是set+首字母大写的属性名</span></span><br><span class="line">        <span class="keyword">if</span> (num &gt;= <span class="number">0</span> &amp;&amp; num &lt; <span class="number">100</span>)&#123;</span><br><span class="line">            age = num;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"数据不合理！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//这个成员方法，专门用于访问私有变量age中的数据</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;<span class="comment">//方法名必须是get+首字母大写的属性名；返回值类型必须为属性的数据类型</span></span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//tips:boolean类型的属性，getter方法必须携程isxxx的形式，setter方法不变</span></span><br></pre></td></tr></table></figure>
+
+<p># </p>
+</li>
+</ul>
+<h1 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h1><p>final关键字代表最终不可改变的。</p>
+<h2 id="常见四种用法"><a href="#常见四种用法" class="headerlink" title="常见四种用法"></a>常见四种用法</h2><ol>
+<li>可以用来修饰一个类</li>
+<li>可以用来修饰一个方法</li>
+<li>可以用来修饰一个局部变量</li>
+<li>可以用来修饰一个成员变量</li>
+</ol>
+<h2 id="final关键字用来修饰类"><a href="#final关键字用来修饰类" class="headerlink" title="final关键字用来修饰类"></a>final关键字用来修饰类</h2><ul>
+<li><p>格式：</p>
+<p>​    public final class 类名称{    </p>
+<p>​        //……</p>
+<p>​    }</p>
+</li>
+<li><p>含义：当前这个类不能有任何的子类。（太监类）</p>
+<p>​            一个类如果是final类，那么其中的成员方法都不能覆盖重写。</p>
+</li>
+</ul>
+<h2 id="final关键字修饰一个方法"><a href="#final关键字修饰一个方法" class="headerlink" title="final关键字修饰一个方法"></a>final关键字修饰一个方法</h2><ul>
+<li><p>格式：</p>
+<p>​        修饰符 final void method(){//方法体}</p>
+</li>
+<li><p>含义：当前这个类不能被覆盖重写。</p>
+</li>
+<li><p>注意:对于类与方法而言，abstract与final是矛盾的不能同时使用。</p>
+</li>
+</ul>
+<h2 id="final关键字修饰一个局部变量"><a href="#final关键字修饰一个局部变量" class="headerlink" title="final关键字修饰一个局部变量"></a>final关键字修饰一个局部变量</h2><ul>
+<li>格式： final int num = 100；</li>
+<li>含义:使用final来修饰局部变量，那么这个变量就不能进行更改。<ul>
+<li>基本类型：变量中的数据不可改变。</li>
+<li>引用类型：变量中的地址值不可改变，内容可以变化。</li>
+</ul>
+</li>
+</ul>
+<h2 id="final修饰一个成员变量"><a href="#final修饰一个成员变量" class="headerlink" title="final修饰一个成员变量"></a>final修饰一个成员变量</h2><ul>
+<li>含义：对于成员变量而言，使用final关键字，这个变量不可变。</li>
+<li>与局部变量的区别：<ol>
+<li>成员变量具有默认值，使用了final之后必须手动赋值，不再给默认值。</li>
+<li>一个被final修饰的成员变量，要么直接赋值，要么通过构造方法赋值，二者选其一。</li>
+</ol>
+</li>
+</ul>
+<h1 id="四种权限修饰符对比"><a href="#四种权限修饰符对比" class="headerlink" title="四种权限修饰符对比"></a>四种权限修饰符对比</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">public</th>
+<th align="center">protected</th>
+<th align="center">(default)</th>
+<th align="center">private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">同一个类</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">同一个包</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">不同包子类</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">不同包非子类</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<p>注：public&gt;protected&gt;(default)&gt;private</p>
+<h2 id="定义类时，权限修饰符使用规则："><a href="#定义类时，权限修饰符使用规则：" class="headerlink" title="定义类时，权限修饰符使用规则："></a>定义类时，权限修饰符使用规则：</h2><ol>
+<li>外部类：public/(default)</li>
+<li>成员内部类：public/protected/(default)/private</li>
+<li>局部内部类：什么都不能写，它自己有默认的权限：只能被所在方法使用。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/17/java学习-String/" rel="next" title="java学习--String">
+                <i class="fa fa-chevron-left"></i> java学习--String
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/18/java学习-工具类/" rel="prev" title="java学习--工具类">
+                java学习--工具类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Z7422</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Static"><span class="nav-number">1.</span> <span class="nav-text">Static</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#static静态关键字"><span class="nav-number">1.1.</span> <span class="nav-text">static静态关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态static关键字修饰成员变量"><span class="nav-number">1.2.</span> <span class="nav-text">静态static关键字修饰成员变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态static关键字修饰成员方法"><span class="nav-number">1.3.</span> <span class="nav-text">静态static关键字修饰成员方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态static的内存图"><span class="nav-number">1.4.</span> <span class="nav-text">静态static的内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态代码块"><span class="nav-number">1.5.</span> <span class="nav-text">静态代码块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#private"><span class="nav-number">2.</span> <span class="nav-text">private</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#private关键字的作用以及使用"><span class="nav-number">2.1.</span> <span class="nav-text">private关键字的作用以及使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#final关键字"><span class="nav-number">3.</span> <span class="nav-text">final关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见四种用法"><span class="nav-number">3.1.</span> <span class="nav-text">常见四种用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final关键字用来修饰类"><span class="nav-number">3.2.</span> <span class="nav-text">final关键字用来修饰类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final关键字修饰一个方法"><span class="nav-number">3.3.</span> <span class="nav-text">final关键字修饰一个方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final关键字修饰一个局部变量"><span class="nav-number">3.4.</span> <span class="nav-text">final关键字修饰一个局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final修饰一个成员变量"><span class="nav-number">3.5.</span> <span class="nav-text">final修饰一个成员变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四种权限修饰符对比"><span class="nav-number">4.</span> <span class="nav-text">四种权限修饰符对比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义类时，权限修饰符使用规则："><span class="nav-number">4.1.</span> <span class="nav-text">定义类时，权限修饰符使用规则：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Z7422</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
