@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="Java内存划分java内存需要划分成5个部分：  栈（stack）：存放的都是方法中的局部变量。方法的运行在栈中。 ​    局部变量：方法的参数，或者是方法内部的变量。 ​    作用域：一旦超出作用域，立刻从栈内存中消失。  堆（heap）：凡是new出来的东西，都在堆中。 ​    堆内存中的东西都有一个16进制的地址值。 ​    堆内存中的数据都具有默认值。  方法区（Method A">
+<meta name="description" content="StringBuilder类由于String类的对象内容不可改变（底层被final修饰：private final byte[] value;），所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。 如果对字符串进行拼接操作，每次拼接，都会构建一个新的String对象，既耗时，又浪费空间。为了解决这一问题，可以使用java.lang.StringBuilder类。   StringBuild">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java学习--内存划分">
-<meta property="og:url" content="http://yoursite.com/2019/09/24/2019-09-12-java学习--内存划分/index.html">
+<meta property="og:title" content="java学习--StringBuilder类">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/java学习-StringBuilder类/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java内存划分java内存需要划分成5个部分：  栈（stack）：存放的都是方法中的局部变量。方法的运行在栈中。 ​    局部变量：方法的参数，或者是方法内部的变量。 ​    作用域：一旦超出作用域，立刻从栈内存中消失。  堆（heap）：凡是new出来的东西，都在堆中。 ​    堆内存中的东西都有一个16进制的地址值。 ​    堆内存中的数据都具有默认值。  方法区（Method A">
+<meta property="og:description" content="StringBuilder类由于String类的对象内容不可改变（底层被final修饰：private final byte[] value;），所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。 如果对字符串进行拼接操作，每次拼接，都会构建一个新的String对象，既耗时，又浪费空间。为了解决这一问题，可以使用java.lang.StringBuilder类。   StringBuild">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T09:47:32.088Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/13/java学习-StringBuilder类/1.jpg">
+<meta property="og:updated_time" content="2019-10-13T08:15:45.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java学习--内存划分">
-<meta name="twitter:description" content="Java内存划分java内存需要划分成5个部分：  栈（stack）：存放的都是方法中的局部变量。方法的运行在栈中。 ​    局部变量：方法的参数，或者是方法内部的变量。 ​    作用域：一旦超出作用域，立刻从栈内存中消失。  堆（heap）：凡是new出来的东西，都在堆中。 ​    堆内存中的东西都有一个16进制的地址值。 ​    堆内存中的数据都具有默认值。  方法区（Method A">
+<meta name="twitter:title" content="java学习--StringBuilder类">
+<meta name="twitter:description" content="StringBuilder类由于String类的对象内容不可改变（底层被final修饰：private final byte[] value;），所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。 如果对字符串进行拼接操作，每次拼接，都会构建一个新的String对象，既耗时，又浪费空间。为了解决这一问题，可以使用java.lang.StringBuilder类。   StringBuild">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/13/java学习-StringBuilder类/1.jpg">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/24/2019-09-12-java学习--内存划分/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/13/java学习-StringBuilder类/">
 
 
 
 
 
-  <title>java学习--内存划分 | Hexo</title>
+  <title>java学习--StringBuilder类 | Hexo</title>
   
 
 
@@ -232,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/2019-09-12-java学习--内存划分/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/java学习-StringBuilder类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Z7422">
@@ -249,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java学习--内存划分</h1>
+          <h1 class="post-title" itemprop="name headline">java学习--StringBuilder类</h1>
         
 
         <div class="post-meta">
@@ -261,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T15:33:54+08:00">
-                2019-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-13T15:35:04+08:00">
+                2019-10-13
               </time>
             
 
@@ -321,31 +323,20 @@
       
 
       
-        <h2 id="Java内存划分"><a href="#Java内存划分" class="headerlink" title="Java内存划分"></a>Java内存划分</h2><p><strong>java内存需要划分成5个部分</strong>：</p>
-<ol>
-<li><p><strong>栈</strong>（stack）：存放的都是方法中的局部变量。<strong>方法的运行在栈中。</strong></p>
-<p>​    局部变量：方法的参数，或者是方法内部的变量。</p>
-<p>​    作用域：一旦超出作用域，立刻从栈内存中消失。</p>
-</li>
-<li><p><strong>堆</strong>（heap）：凡是new出来的东西，都在堆中。</p>
-<p>​    堆内存中的东西都有一个16进制的地址值。</p>
-<p>​    堆内存中的数据都具有默认值。</p>
-</li>
-<li><p><strong>方法区</strong>（Method Area）：存储.class相关的信息，包含方法的信息。</p>
-</li>
-<li><p><strong>本地方法栈</strong>（Native Method Stack）：与操作系统相关。</p>
-</li>
-<li><p><strong>寄存器</strong>（PC Register）：与CPU相关。</p>
-</li>
-</ol>
-<h2 id="垃圾回收机制Garbage-Collection"><a href="#垃圾回收机制Garbage-Collection" class="headerlink" title="垃圾回收机制Garbage Collection"></a>垃圾回收机制Garbage Collection</h2><p>​    C/C++中，需要程序员负责回收已经分配的内存。但显式回收垃圾有主要两个缺点：</p>
-<ol>
-<li>忘记回收无用内存：内存泄漏，降低系统性能</li>
-<li>错误回收程序核心类库的内存：系统崩溃。</li>
-</ol>
-<p>　　Java语言不需要程序员控制内存回收，而是由JRE完成这件事。通常JRE会提供一个后台线程来进行检测和控制，一般都是在<strong>CPU空闲或者内存不足时</strong>自动进行垃圾回收，程序员无法精确控制垃圾回收的时间和顺序等。</p>
-<p>​        Java<strong>堆内存</strong>是一个<strong>运行时数据区</strong>，用来保存类的实例，Java虚拟机的堆内存中存储这正在运行的应用程序所建立的所有对象，这些对象不需要程序通过代码来显式地释放。垃圾回收是一种<strong>动态存储管理技术</strong>，它自动地释放不再被程序引用的对象，按照特定的垃圾回收算法来实现内存资源的自动回收功能。JVM也能进行<strong>内存整理</strong>，将所用的堆内存移到堆的一端以腾出可以使用的连续空闲区。</p>
-<p>​    缺点：垃圾回收的开销会影响程序性能。</p>
+        <h1 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h1><p>由于String类的对象内容不可改变（底层被final修饰：private final byte[] value;），所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。</p>
+<p>如果对字符串进行拼接操作，每次拼接，都会构建一个新的String对象，既耗时，又浪费空间。为了解决这一问题，可以使用<code>java.lang.StringBuilder</code>类。</p>
+<img src="/2019/10/13/java学习-StringBuilder类/1.jpg">
+
+<h3 id="StringBuilder的构造方法"><a href="#StringBuilder的构造方法" class="headerlink" title="StringBuilder的构造方法"></a>StringBuilder的构造方法</h3><p>根据StringBuilder的API文档，常用构造方法有2个：</p>
+<ul>
+<li><code>public StringBuilder()</code>：构造一个空的StringBuilder容器。</li>
+<li><code>public StringBuilder(String str)</code>：构造一个StringBuilder容器，并将字符串添加进去。</li>
+</ul>
+<h3 id="StringBuilder的常用方法"><a href="#StringBuilder的常用方法" class="headerlink" title="StringBuilder的常用方法"></a>StringBuilder的常用方法</h3><p>StringBuilder常用的方法有2个：</p>
+<ul>
+<li><code>public StringBuilder append(...)</code>：添加任意类型数据的字符串形式，并返回当前对象自身。</li>
+<li><code>public String toString()</code>：将当前StringBuilder对象转换为String对象。</li>
+</ul>
 
       
     </div>
@@ -370,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/24/java学习-JVM/" rel="next" title="java学习--JVM">
-                <i class="fa fa-chevron-left"></i> java学习--JVM
+              <a href="/2019/10/12/java学习-日期时间类/" rel="next" title="java学习--日期时间类">
+                <i class="fa fa-chevron-left"></i> java学习--日期时间类
               </a>
             
           </div>
@@ -380,8 +371,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/24/java学习-多态/" rel="prev" title="java学习--多态">
-                java学习--多态 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/13/java学习-包装类/" rel="prev" title="java学习--包装类">
+                java学习--包装类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -505,7 +496,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存划分"><span class="nav-number">1.</span> <span class="nav-text">Java内存划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收机制Garbage-Collection"><span class="nav-number">2.</span> <span class="nav-text">垃圾回收机制Garbage Collection</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder类"><span class="nav-number">1.</span> <span class="nav-text">StringBuilder类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder的构造方法"><span class="nav-number">1.0.1.</span> <span class="nav-text">StringBuilder的构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuilder的常用方法"><span class="nav-number">1.0.2.</span> <span class="nav-text">StringBuilder的常用方法</span></a></li></ol></li></ol></div>
             
 
           </div>

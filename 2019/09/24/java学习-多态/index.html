@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/24/java学习-多态/多态好处.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/24/java学习-多态/转型.png">
-<meta property="og:updated_time" content="2019-09-25T10:04:36.532Z">
+<meta property="og:updated_time" content="2019-10-08T12:52:53.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java学习--多态">
 <meta name="twitter:description" content="多态Polymorphism面向对象三大特征：封装性&amp;amp;继承性&amp;amp;多态性 extends继承或者implements实现，是多态性的前提。 多态的格式与使用 代码当中体现多态性：父类引用指向子类对象。(子类被当作父类看待:猫-&amp;gt;动物)  多态：java引用变量有两个类型：编译时类型(由声明类型决定)&amp;amp;运行时类型(实际赋值的对象决定)。编译时类型和运行时类型不一致，可能出现">
@@ -334,11 +334,7 @@
 <li><p><strong>格式</strong>：父类名称 对象名 = new 子类名称();</p>
 <p>​            接口名称 对象名 = new 实现类名();</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodFu</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类特有方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodZi</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类特有方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01Multi</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//左侧父类的引用，指向右侧子类的对象。</span></span><br><span class="line">        Fu obj = <span class="keyword">new</span> Zi();</span><br><span class="line">        obj.method();<span class="comment">//子类方法；new谁先找谁</span></span><br><span class="line">        obj.methodFu();<span class="comment">//父类特有方法</span></span><br><span class="line">      <span class="comment">//obj.methodZi();错误，不能使用子类特有方法；</span></span><br><span class="line">        <span class="comment">//原因:引用变量只能调用声明该变量时所用类里包含的方法。对于子类而言，多态意味着向上转型，转型为父类对象，因此只能使用父类中所有的方法（无论是默认/私有/抽象--&gt;子接口中必须实现该抽象方法才能用）</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 </li>
-</ul>
-<ul>
 <li><p>注意事项：</p>
 <blockquote>
 <p>通过引用变量来访问其包含的实例Field时，系统总是试图让问它编译时类型所定义的Field，而不是它运行时类型定义的Filed。</p>
@@ -504,7 +500,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -515,7 +511,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
